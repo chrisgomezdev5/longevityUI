@@ -1,0 +1,19 @@
+{
+  "name": "longevity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-cli": "^3.1.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.91.0"
+  }
+}

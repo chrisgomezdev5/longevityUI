@@ -1,0 +1,129 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'form';
+@import 'component-video-carousel';
+@import 'component-transition-copy';
+@import 'component-flipping-cards.scss';
+@import 'component-right-video';
+@import 'component-timeline';
+@import 'component-assessment';
+@import 'component-our-team';
+@import 'component-who-we-are';
+@import 'component-video-modal';
+html, body {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Open Sans', sans-serif;
+    height: 2000px;
+}
+
+.checkmark {
+    color: var(--NM-Purple-prp-MAIN, #4E2A84);
+    font-family: "Font Awesome 5 Free";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 160%; /* 41.6px */
+    letter-spacing: -0.13px;    
+}
+
+
+h1 {
+    color: #000;
+    text-align: center;
+
+    /* H1 */
+    font-family: "Open Sans";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px; /* 131.579% */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        font-size: 48px;
+    }            
+}
+
+.medium-text, h2 {
+    color: #000;
+    text-align: center;
+
+    /* H2 */
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 160%; /* 38.4px */            
+}      
+
+.small-text, h3 {
+    color: #000;
+    text-align: center;
+
+    /* H3 */
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 80% */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;         
+}    
+
+div, p {
+    color: #000;
+    text-align: center;
+
+    /* P */
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: 0.18px;    
+}
+.text-black {
+    color: #000;
+}
+
+.button {
+    display: inline-block;
+    background-color: $NM-Purple-prp-MAIN;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $NM-Purple-prp-20;
+    }
+}
+.spacer-50 {
+    height: 20px;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        height: 50px;
+    }  
+}            
+.spacer-100 {
+    height: 20px;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        height: 100px;
+    }  
+}
+
+main {
+    overflow: hidden;
+}
+
+
+
+

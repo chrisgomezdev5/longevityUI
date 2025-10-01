@@ -1,0 +1,17 @@
+@import 'variables';
+
+#movieModalOverlay {
+display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);z-index:2000;justify-content:center;align-items:center;
+}
+
+#movieModal {
+background:#000;width:60vw;max-width:900px;height:60vh;max-height:80vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);padding:0;
+}
+
+#closeMovieModal {
+position:absolute;top:10px;right:18px;font-size:2rem;background:none;border:none;color:#fff;cursor:pointer;z-index:10;
+}
+
+#modalMoviePlayer {
+width:100%;height:100%;border-radius:12px;background:#000;
+}

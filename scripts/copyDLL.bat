@@ -1,0 +1,1 @@
+copy D:\repos\nwlongevity\Multisites\bin\NM_MultiSites.dll C:\inetpub\wwwroot\central.sc\bin\NM_MultiSites.dll /y

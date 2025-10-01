@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GSAP Corner-to-Center</title>
+<style>
+  body { margin: 0; background:#4e2a84; display:grid; place-items:center; height:100vh; }
+  .stage {
+    position: relative;
+    width: min(90vw, 900px);
+    aspect-ratio: 16 / 9;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .stage img {
+    position: absolute;
+
+    height: auto;
+    user-select: none;
+    will-change: transform;
+  }
+  #imgC {
+  position: absolute;
+  left: 100px;
+  top: 222px;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 0; /* initial width */
+  transition: none;
+  }
+  /* Start one in the top-left, the other in the bottom-right */
+  #imgA { top: 0; left: 0; z-index: 1; }
+  #imgB { bottom: 0; right: 0; }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <img id="imgA" src="nm-350a.jpg" alt="Image A">
+    <img id="imgB" src="nm-350b.jpg" alt="Image B">
+    <img id="imgC" src="nm-350c.jpg" alt="Image C">
+  </div>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script>
+    const stage = document.getElementById("stage");
+    const imgA  = document.getElementById("imgA");
+    const imgB  = document.getElementById("imgB");
+
+    // Helper: compute how far to move an element so its center lands at the stage center
+    function toCenter(el) {
+      const stageRect = stage.getBoundingClientRect();
+      const elRect    = el.getBoundingClientRect();
+
+      // current position relative to stage
+      const left = elRect.left - stageRect.left;
+      const top  = elRect.top  - stageRect.top;
+
+      // centers
+      const stageCX = stageRect.width  / 2;
+      const stageCY = stageRect.height / 2;
+      const elCX    = left + elRect.width  / 2;
+      const elCY    = top  + elRect.height / 2;
+
+      // deltas needed to align centers
+      const dx = stageCX - elCX;
+      const dy = stageCY - elCY;
+
+      // Use relative x/y so it’s layout-agnostic
+      return { x: `+=${dx}`, y: `+=${dy}` };
+    }
+
+    function toCenter2(el) {
+      const stageRect = stage.getBoundingClientRect();
+      const elRect    = el.getBoundingClientRect();
+
+      // current position relative to stage
+      const left = elRect.left - stageRect.left;
+      const top  = elRect.top  - stageRect.top;
+
+      // centers
+      const stageCX = stageRect.width  / 2;
+      const stageCY = stageRect.height / 2;
+      const elCX    = left + elRect.width  / 2;
+      const elCY    = top  + elRect.height / 2;
+
+      // deltas needed to align centers
+      const dx = stageCX - elCX + 40;
+      const dy = stageCY - elCY;
+
+      // Use relative x/y so it’s layout-agnostic
+      return { x: `+=${dx}`, y: `+=${dy}` };
+    }    
+
+    // Build the timeline (both move together)
+    let tl;
+    function play() {
+      tl && tl.kill();
+      gsap.set([imgA, imgB], {clearProps: "x,y"}); // reset transforms before re-measuring
+      
+      gsap.set("#imgC", { width: 0, opacity: 1, left: "400px", transform: "translateX(-20%)" });
+
+      tl = gsap.timeline({ defaults: { duration: 1.2, ease: "power3.inOut" }});
+      //tl.to(imgA, toCenter(imgA))
+        //.to(imgB, toCenter2(imgB), "<"); // "<" starts at the same time as previous tween
+      tl.to(imgA, { x: "+=290", y: "+=220"} , "<" )
+        .to(imgB, { x: "-=500", y: "-=220" }, "<") // "<" starts at the same time as previous tween
+        .to("#imgC", {
+    width: 238, // target width in px
+    duration: 1,
+    ease: "power2.out"
+  }); 
+      }
+
+    play();
+
+    // Recalculate on resize for responsiveness
+    addEventListener("resize", () => {
+      // Re-run the animation from the beginning with fresh measurements
+      play();
+    });
+
+    // Optional: respect reduced-motion
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.globalTimeline.timeScale(0.0001);
+    }
+  </script>
+</body>
+</html>

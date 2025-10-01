@@ -1,0 +1,360 @@
+@import 'variables';
+
+.component-who-we-are {
+    color: $NM-Purple-prp-MAIN;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 10px;
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        padding: 0px;
+    }
+
+    .cta {
+        padding: 10px 40px;
+        background-color: $NM-Purple-prp-MAIN;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .section {
+        border-left: 1px solid #4E2A84;
+        padding-left: 10px;
+
+        @media screen and (min-width: $desktop-breakpoint)  {
+            border-left: none;
+            padding-left: unset;
+        }
+        &.hide-mobile {
+            display: none;
+            visibility: hidden;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                display: block;
+                visibility: visible;
+            }
+        }
+
+        &.section1 {
+            height: 100%;
+
+            .component-title {
+                text-align: center;
+                margin-bottom: 50px;
+
+                h2 {
+                    color: $NM-Purple-prp-MAIN;
+                    font-weight: 700;
+                    font-size: 32px;
+
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        position: relative;
+                        width: 300px;
+                        margin: auto;
+                        padding-top: 50px;
+                    }
+                }
+            }
+
+            .svg-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                overflow: hidden;
+
+                svg {
+                    width: 90%;
+                    margin: auto;
+                    display: flex;
+                }
+            }
+
+            .right {
+                .content {
+                    color: #000;
+                    text-align: center;
+                    width: 100%;
+                    margin: auto;
+
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        width: 450px;
+                        margin: unset;
+                    }
+
+                    .text-2 {
+                        font-size: 16px;
+                    }
+
+                    svg {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.section2 {
+
+            .right {
+
+                .content {
+                    padding: 10px;
+
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        padding: 0px;
+                    }
+                }
+
+                .chart {
+                    img {
+                        width: 100%;
+                    }
+
+                    svg {
+                        width: 100%;
+                    }
+                }
+
+                .doctor-quote {
+
+
+                    @media screen and (min-width: 1200px) {
+                        display: flex;
+                    }
+
+                    .quote {
+                        padding-top: 50px;
+                        color: #000;
+
+                        @media screen and (min-width: 1200px) {
+                            padding: 20px;
+                            padding-top: 50px;
+                        }
+
+
+                        div {
+                            margin-bottom: 20px;
+
+                            span {
+                                display: block;
+                            }
+
+                            .name {
+                                color: $NM-Purple-prp-MAIN;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.section3 {
+            position: relative;
+
+            .component-timeline {
+                margin-top: 50px;
+                position: absolute;
+
+
+
+                .timeline-container {
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        width: 46.5vw;
+                    }
+
+                    .event {
+
+                        @media screen and (min-width: $desktop-breakpoint) {
+                            width: 130vw;
+                        }
+                    }
+                }
+            }
+
+            .play-timeline-button {
+                position: absolute;
+                top: 410px;
+                left: 10vw;
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    top: 270px;
+                    left: 90vw;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    svg path {
+                        fill: $NM-Purple-prp-20;
+                    }
+                }
+            }
+        }
+
+        &.section4 {
+            position: relative;
+            margin-bottom: 80px;
+            .right {
+
+                .content {
+                    position: relative;
+
+                    .team-members {
+                        display: flex;
+                        overflow-x: scroll;
+                        position: absolute;
+                        width: 100%;
+
+                        @media screen and (min-width: $desktop-breakpoint) {
+                            width: 46.5vw;
+                        }
+                    }
+
+                    .play-team-button {
+                        position: absolute;
+                        top: 100px;
+                        left: 15vw;
+                        display: none;
+
+                        @media screen and (min-width: $desktop-breakpoint) {
+                            top: 130px;
+                            left: 35vw;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+
+                            svg path {
+                                fill: $NM-Purple-prp-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.light-purple {
+            background-color: $NM-Purple-prp-10;
+
+        }
+
+        .team-members {
+            display: flex;
+            overflow-x: scroll;
+            position: absolute;
+            width: 100%;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                width: 46.5vw;
+            }
+
+            .member {
+                margin-right: 5px;
+                height: 360px;
+                overflow-y: clip;
+            }
+        }
+
+        .section-inner-container {
+            width: 100%;
+            height: 100%;
+            min-height: 90vh;
+
+            @media screen and (min-width: 390px) {
+                min-height: 80vh;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                min-height: 50vh;
+                display: flex;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                min-height: 80vh;
+            }
+
+            .left {
+                width: 100%;
+                height: auto;
+                //border-bottom: 2px solid $NM-Purple-prp-MAIN;
+                text-align: right;
+                padding-bottom: 30px;
+                //display: none;
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    width: 50%;
+                    border-right: 2px solid $NM-Purple-prp-MAIN;
+                    border-bottom: none;
+                }
+
+                .content {
+                    width: 100%;
+
+                    h2 {
+                        color: var(--NM-Purple-prp-MAIN, #4E2A84);
+                        text-align: center;
+                        font-family: "Open Sans";
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 450;
+                        line-height: 160%; /* 38.4px */   
+                        
+                        @media screen and (min-width: $desktop-breakpoint) {
+                            text-align: right;
+                        }
+                    }
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        width: 400px;
+                        float: right;
+                        text-align: right;
+                        padding: 50px;
+                    }
+
+                    p {
+                        margin: 0px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            .right {
+                width: 100%;
+                height: auto;
+
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    width: 50%;
+                    border-left: 2px solid $NM-Purple-prp-MAIN;
+                }
+
+                .content {
+
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        padding: 50px;
+                    }
+
+                    div {
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .component-footer {
+        .footer-inner-container {
+            width: 90%;
+            margin: auto;
+            font-style: italic;
+            opacity: .7;
+            text-align: left;
+        }
+    }
+}

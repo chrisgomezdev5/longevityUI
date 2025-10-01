@@ -1,0 +1,133 @@
+@import 'variables';
+
+
+.component-video-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 433px;
+    max-height: 860px;
+
+    &.tall {
+        max-height: 900px;
+    }
+
+    @media screen and (min-width: $tab-breakpoint) {
+        height: 100vh;
+    }
+
+    video {
+        height: -webkit-fill-available;
+        display: block;
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            height: auto;
+            width: -webkit-fill-available;
+        }
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(78, 42, 132, 0.00) 2.24%,#4E2A84 77.8%);
+        z-index: 1;
+
+        .copy {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            padding: 20px;
+            padding-top: 90px;
+            z-index: 2;
+
+            @media screen and (min-width: $tab-breakpoint) {
+                max-width: 1250px;
+                padding-top: 130px;
+            }
+
+            .spacer-100 {
+                height: 0px;
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    height: 120px;
+                }
+            }
+
+            h1 {
+                color: var(--White, #FFF);
+                text-align: center;
+
+                /* Title */
+                font-family: Overpass;
+                font-size: 23px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 6px;
+                text-transform: uppercase;
+
+                @media screen and (min-width: $tab-breakpoint) {
+                    font-size: 48px;
+                }
+            }
+
+            h2 {
+                color: var(--White, #FFF);
+                text-align: center;
+
+                /* H1 */
+                font-family: "Open Sans";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 25px; /* 131.579% */
+                letter-spacing: 5px;
+                text-transform: uppercase;  
+                
+                @media screen and (min-width: $tab-breakpoint) {
+                    font-size: 38px;
+                    line-height: 50px; /* 131.579% */
+                }
+            }
+            .description {
+                color: var(--White, #FFF);
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 450;
+                line-height: 130%;
+                text-transform: none;
+
+
+                @media screen and (min-width: $tab-breakpoint) {
+                    display: inline-block;
+                    line-height: 160%;
+                    font-size: 24px;
+                }
+            }
+        }
+
+
+        .bottomnmpattern {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+                mask: linear-gradient(to bottom, rgba(209, 209, 209, 0.1) 0%, rgba(0,0,0,1) 100%);
+                -webkit-mask: linear-gradient(to bottom, rgba(209, 209, 209, 0.1) 0%, rgba(0,0,0,1) 100%);
+                opacity: 0.9;
+            }
+        }
+    }
+}
+

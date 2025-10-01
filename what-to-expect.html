@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+                <!-- Modal Overlay and Form -->
+        <div id="planModalOverlay" class="planModalOverlay">
+            <div id="planModal"  class="planModal" >
+                <button id="closePlanModal" class="closePlanModal">&times;</button>
+                <div>
+                    <svg width="300" height="57" viewBox="0 0 300 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M93.6016 0H100.863L109.651 18.4481V0H114.321V23.4387H107.417L98.337 3.98667V23.4387H93.6057V0H93.6016Z" fill="#4E2A84"/>
+                    <path d="M125.18 6.67725C131.112 6.67725 133.675 10.6968 133.675 15.2677C133.675 19.8386 131.018 24.0228 125.085 24.0228C120.415 24.0228 116.721 21.1387 116.721 15.3994C116.721 11.4456 118.733 6.67725 125.184 6.67725H125.18ZM125.245 20.6862C127.352 20.6862 128.779 19.4231 128.779 15.0785C128.779 12.9062 128.36 9.89045 125.18 9.89045C121.678 9.89045 121.645 13.943 121.645 15.4364C121.645 19.0981 122.876 20.6903 125.245 20.6903V20.6862Z" fill="#4E2A84"/>
+                    <path d="M136.135 11.0881C136.135 10.3105 136.008 7.94483 135.909 7.00268H140.414L140.513 10.1459C141.13 8.75122 142.2 6.77228 146.088 6.96976V11.2815C141.225 10.8289 140.933 13.3221 140.933 15.3669V23.439H136.135V11.0881Z" fill="#4E2A84"/>
+                    <path d="M159.582 23.213C158.027 23.6326 156.632 23.7313 155.854 23.7313C151.024 23.7313 151.024 20.6827 151.024 19.3209V10.3396H147.881V7.1634H151.024V3.95432L155.788 2.20166V7.1634H159.68V10.3396H155.788V17.7328C155.821 19.2263 155.821 20.1643 157.961 20.1643C158.672 20.1643 158.997 20.1314 159.582 20.0656V23.2088V23.213Z" fill="#4E2A84"/>
+                    <path d="M162.532 0.0336914H167.296V9.30713C167.848 8.52955 169.049 6.84272 172.032 6.84272C174.463 6.84272 176.019 8.04407 176.796 9.04794C177.38 9.85844 177.866 11.3519 177.866 13.4913V23.4436H173.102V13.6517C173.102 12.7096 173.102 10.0847 170.411 10.0847C169.049 10.0847 167.329 10.8623 167.329 13.4255L167.362 23.4436H162.532V0.0336914Z" fill="#4E2A84"/>
+                    <path d="M184.222 7.06836L187.238 19.4192L190.706 7.06836H195.989L199.424 19.4192L202.633 7.06836H207.397L201.79 23.4388H196.569L193.199 11.3142L189.764 23.4388H184.481L179.133 7.06836H184.222Z" fill="#4E2A84"/>
+                    <path d="M212.269 16.4692C212.269 17.5389 212.269 20.8467 215.61 20.8467C216.811 20.8467 218.008 20.3941 218.461 18.5756H222.838C222.772 19.3532 222.612 20.748 221.283 22.1427C220.082 23.4057 217.942 24.0558 215.544 24.0558C214.149 24.0558 211.491 23.7966 209.772 22.0151C208.282 20.46 207.665 18.2547 207.665 15.6299C207.665 13.005 208.315 9.79591 211.068 7.8828C212.331 7.03939 213.89 6.521 215.671 6.521C218.004 6.521 220.793 7.43024 222.287 10.4748C223.39 12.7129 223.324 15.1115 223.258 16.4733H212.269V16.4692ZM218.366 13.4534C218.366 12.7088 218.3 9.78768 215.515 9.78768C213.408 9.78768 212.532 11.5362 212.433 13.4534H218.366Z" fill="#4E2A84"/>
+                    <path d="M229.779 18.7075C229.845 19.7443 230.491 20.9456 232.503 20.9456C234.223 20.9456 235.033 19.9747 235.033 18.9996C235.033 18.2549 234.642 17.6707 232.762 17.1523L229.779 16.3418C228.451 15.951 225.628 15.1405 225.628 11.8038C225.628 8.46721 228.545 6.68164 232.795 6.68164C236.169 6.68164 238.892 8.23681 239.02 11.5117H234.642C234.515 9.69736 233.054 9.56571 232.31 9.56571C231.014 9.56571 230.039 10.1828 230.039 11.1867C230.039 12.2893 230.849 12.5156 232.277 12.9064L235.227 13.7169C238.21 14.5274 239.604 16.0497 239.604 18.2878C239.604 21.1102 237.173 23.9284 232.083 23.9284C229.977 23.9284 227.965 23.4759 226.476 21.9207C225.406 20.7852 225.307 19.4892 225.274 18.7116H229.779V18.7075Z" fill="#4E2A84"/>
+                    <path d="M252.276 23.213C250.721 23.6326 249.326 23.7313 248.549 23.7313C243.718 23.7313 243.718 20.6827 243.718 19.3209V10.3396H240.575V7.1634H243.718V3.95432L248.483 2.20166V7.1634H252.375V10.3396H248.483V17.7328C248.516 19.2263 248.516 20.1643 250.655 20.1643C251.367 20.1643 251.692 20.1314 252.276 20.0656V23.2088V23.213Z" fill="#4E2A84"/>
+                    <path d="M258.475 16.4692C258.475 17.5389 258.475 20.8467 261.815 20.8467C263.017 20.8467 264.214 20.3941 264.671 18.5756H269.048C268.982 19.3532 268.822 20.748 267.493 22.1427C266.296 23.4057 264.152 24.0558 261.754 24.0558C260.359 24.0558 257.701 23.7966 255.981 22.0151C254.492 20.46 253.875 18.2547 253.875 15.6299C253.875 13.005 254.525 9.79591 257.277 7.8828C258.541 7.03939 260.1 6.521 261.881 6.521C264.214 6.521 267.003 7.43024 268.497 10.4748C269.6 12.7129 269.534 15.1115 269.468 16.4733H258.479L258.475 16.4692ZM264.568 13.4534C264.568 12.7088 264.502 9.78768 261.717 9.78768C259.61 9.78768 258.734 11.5362 258.635 13.4534H264.568Z" fill="#4E2A84"/>
+                    <path d="M272.315 11.0881C272.315 10.3105 272.183 7.94483 272.089 7.00268H276.594L276.693 10.1459C277.31 8.75122 278.379 6.77228 282.267 6.96976V11.2815C277.404 10.8289 277.112 13.3221 277.112 15.3669V23.439H272.315V11.0881Z" fill="#4E2A84"/>
+                    <path d="M284.601 9.98478C284.601 9.91895 284.601 8.13749 284.502 7.00197H289.106L289.237 9.46639C289.69 8.72171 290.986 6.61523 294.553 6.61523C297.762 6.61523 299.124 8.56126 299.548 9.69678C299.906 10.7007 300 11.5441 300 14.5927V23.4424H295.104V13.2638C295.104 12.5808 295.104 12.0007 294.845 11.4782C294.487 10.7665 293.742 10.0835 292.512 10.0835C291.476 10.0835 290.533 10.569 290.015 11.3466C289.723 11.7662 289.431 12.5767 289.431 13.8439V23.4383H284.601V9.98478Z" fill="#4E2A84"/>
+                    <path d="M93.6016 55.5378V32.1279H96.9752L105.763 52.5221L114.745 32.1279H117.954V55.5378H115.847V33.9135H115.781L106.833 55.5378H104.726L95.778 34.0081H95.7122V55.5378H93.6057H93.6016Z" fill="#4E2A84"/>
+                    <path d="M123.331 47.8564C123.397 51.3247 124.985 54.2417 128.972 54.2417C131.272 54.2417 133.185 52.5878 133.674 50.3497H135.715C134.711 54.2417 132.28 56.0232 128.355 56.0232C123.492 56.0232 121.221 51.839 121.221 47.3998C121.221 42.9605 123.652 38.7764 128.482 38.7764C133.93 38.7764 135.908 42.763 135.908 47.8523H123.327L123.331 47.8564ZM133.802 46.0709C133.576 42.9276 131.889 40.5578 128.519 40.5578C125.343 40.5578 123.656 43.2156 123.397 46.0709H133.806H133.802Z" fill="#4E2A84"/>
+                    <path d="M151.016 53.1395L150.95 53.012C149.621 54.958 147.643 56.0277 145.376 56.0277C140.546 56.0277 138.698 51.4239 138.698 47.3385C138.698 43.253 140.546 38.7809 145.376 38.7809C147.548 38.7809 149.815 39.8177 150.95 41.7308L151.016 41.665V32.1323H152.962V51.8764C152.962 53.1395 153.061 54.4396 153.123 55.5422H151.111L151.012 53.1436L151.016 53.1395ZM145.701 40.5624C142.006 40.5624 140.805 43.9977 140.805 47.1122C140.805 50.2266 141.681 54.2462 145.409 54.2462C149.654 54.2462 150.954 50.7121 150.954 47.0176C150.954 43.7097 149.494 40.5665 145.701 40.5665V40.5624Z" fill="#4E2A84"/>
+                    <path d="M159.64 34.5638H157.369V32.1323H159.64V34.5638ZM159.48 39.2664V55.5422H157.534V39.2664H159.48Z" fill="#4E2A84"/>
+                    <path d="M174.715 44.2568C174.555 41.7595 172.967 40.5622 170.276 40.5622C167.293 40.5622 165.446 43.6726 165.446 47.3712C165.446 51.0699 167.293 54.2461 170.276 54.2461C172.806 54.2461 174.555 52.6909 174.715 50.4528H176.822C176.303 54.1803 174.164 56.0275 170.465 56.0275C165.602 56.0275 163.331 51.8434 163.331 47.4042C163.331 42.9649 165.763 38.7808 170.593 38.7808C173.933 38.7808 176.657 40.7926 176.817 44.2609H174.711L174.715 44.2568Z" fill="#4E2A84"/>
+                    <path d="M182.46 34.5638H180.189V32.1323H182.46V34.5638ZM182.3 39.2664V55.5422H180.354V39.2664H182.3Z" fill="#4E2A84"/>
+                    <path d="M189.139 55.5377H187.193V42.9276C187.193 41.6604 187.094 40.3645 187.032 39.2618H189.044L189.143 41.6604L189.209 41.7263C190.344 39.7144 192.191 38.7764 194.298 38.7764C199.613 38.7764 200.037 43.4789 200.037 45.3591V55.5377H198.091V45.0341C198.091 42.2117 196.47 40.5578 193.812 40.5578C190.603 40.5578 189.143 43.2485 189.143 46.1655V55.5336L189.139 55.5377Z" fill="#4E2A84"/>
+                    <path d="M205.22 47.8564C205.286 51.3247 206.874 54.2417 210.861 54.2417C213.16 54.2417 215.074 52.5878 215.563 50.3497H217.604C216.6 54.2417 214.168 56.0232 210.243 56.0232C205.38 56.0232 203.109 51.839 203.109 47.3998C203.109 42.9605 205.541 38.7764 210.371 38.7764C215.818 38.7764 217.793 42.763 217.793 47.8523H205.212L205.22 47.8564ZM215.691 46.0709C215.464 42.9276 213.778 40.5578 210.408 40.5578C207.232 40.5578 205.545 43.2156 205.286 46.0709H215.695H215.691Z" fill="#4E2A84"/>
+                    <path d="M6.03144 8.42223L31.4408 55.5917H45.5526L16.2059 0.0498047H0V55.5917H6.03144V8.42223Z" fill="#4E2A84"/>
+                    <path d="M65.6756 55.5917H78.1704V0.0498047H65.6961L51.0084 26.4672L37.0365 0.0498047H22.752L47.104 46.0632L65.6961 12.5282L65.6756 55.5917Z" fill="#4E2A84"/>
+                    <path d="M220.801 34.5596C219.328 34.5596 218.144 35.7445 218.144 37.2009C218.144 38.6573 219.328 39.8587 220.801 39.8587C222.274 39.8587 223.447 38.6738 223.447 37.2009C223.447 35.728 222.27 34.5596 220.801 34.5596ZM220.801 39.4802C219.542 39.4802 218.522 38.4598 218.522 37.2009C218.522 35.9419 219.538 34.9381 220.801 34.9381C222.064 34.9381 223.068 35.9584 223.068 37.2009C223.068 38.4434 222.056 39.4802 220.801 39.4802Z" fill="#4E2A84"/>
+                    <path d="M221.821 37.9084C221.797 37.6039 221.731 37.3365 221.414 37.2666V37.2584C221.739 37.1555 221.887 36.8428 221.887 36.4684C221.887 35.9706 221.571 35.6538 221.064 35.6538H219.789V38.7683H220.151V37.4394H221.032C221.381 37.4394 221.443 37.6986 221.484 38.003C221.538 38.3075 221.484 38.6448 221.583 38.7724H221.986C221.834 38.5584 221.85 38.217 221.826 37.9125L221.821 37.9084ZM220.9 37.0856H220.147V35.9994H221.044C221.381 35.9994 221.525 36.2257 221.525 36.5301C221.525 36.9827 221.237 37.0856 220.9 37.0856Z" fill="#4E2A84"/>
+                    </svg>
+                </div>
+                <h2>Plan your visit today.</h2>
+                <script type="text/javascript" src=https://northwestern-medicine.formstack.com/forms/js.php/human_longevity_lab></script><noscript><a href=https://northwestern-medicine.formstack.com/forms/human_longevity_lab title="Online Form">Online Form - Human Longevity Clinic</a></noscript>
+            </div>
+        </div>
+
+    <header>
+        <nav id="nav" class="home desktop" aria-label="Main navigation">
+            <div class="logo"><a href="/"><img src="/Areas/longevity/Content/img/header/logo.svg" alt="Northwestern Medicine Longevity Clinic logo"></a></div>
+            <div class="menu">
+                <a href="/about.html">ABOUT</a>
+                <a href="#">WHAT TO EXPECT</a>
+                <a href="/our-team.html">OUR TEAM</a>
+                <a href="#" class="plan-your-visit button">Plan Your Visit</a>
+            </div>
+        </nav>    
+        
+        <nav id="navMobile" class="home mobile" aria-label="Main navigation">
+            <div class="menu-icon" id="menuIcon" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+                <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.07812 2H32.4679" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <path d="M2 10H32.4678" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                <path d="M7.07812 18H32.4679" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="logo"><a href="/"><img src="/Areas/longevity/Content/img/header/logo.svg" alt="Northwestern Medicine Longevity Clinic logo"></a></div>
+            <div class="visit-icon plan-your-visit">
+                <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="39" height="39" rx="19.5" fill="white"/>
+                <path d="M11.7549 11.5469H26.8623C27.053 11.5469 27.2362 11.6221 27.3711 11.7568C27.5059 11.8917 27.5819 12.075 27.582 12.2656V16.0068H11.0361V12.2656C11.0363 12.075 11.1113 11.8917 11.2461 11.7568C11.3809 11.622 11.5642 11.547 11.7549 11.5469Z" fill="#5B3B8C" fill-opacity="0.2" stroke="#4E2A84" stroke-width="0.0716291"/>
+                <path d="M26.8626 11.5107H11.7554C11.3382 11.5107 11 11.8489 11 12.2661V27.3733C11 27.7905 11.3382 28.1287 11.7554 28.1287H26.8626C27.2798 28.1287 27.6179 27.7905 27.6179 27.3733V12.2661C27.6179 11.8489 27.2798 11.5107 26.8626 11.5107Z" stroke="#4E2A84" stroke-width="1.14606" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.8418 10V13.0214" stroke="#4E2A84" stroke-width="1.14606" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.7773 10V13.0214" stroke="#4E2A84" stroke-width="1.14606" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 16.043H27.6179" stroke="#4E2A84" stroke-width="1.14606" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.1562 21.655L18.7349 24.1416L23.8922 19.1685" stroke="#4E2A84" stroke-width="1.14685" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+                <div class="logo-container">
+                    <div class="close-icon" id="closeIcon" aria-label="Close menu">
+                        <svg id="closeIconSVG" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 12H11.6092L6.50589 6.36936L1.33182 12H0L5.79873 5.76197L0.518586 0H1.89755L6.55304 5.16279L11.2439 0H12.5757L7.2602 5.75376L13 12Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="logo">
+                        <a href="/"><img src="/Areas/longevity/Content/img/header/logo.svg" alt="Northwestern Medicine Longevity Clinic logo"></a>
+                    </div>
+                </div>
+                <a href="/about">ABOUT</a>
+                <a href="#">WHAT TO EXPECT</a>
+                <a href="/our-team.html">OUR TEAM</a>
+                <a href="#" class="plan-your-visit button">Plan Your Visit</a>
+            </div>
+        </nav>
+    </header>
+<div class="main-contain">
+                <div class="component-video-carousel" aria-label="Clinic introduction video" role="region">
+        <script>
+            const videoFiles = [
+                         "/-/media/longevity/expect/headers/1-what-to-expect_1.mp4",
+                         "/-/media/longevity/expect/headers/2-what-expect-3_1.mp4",
+                         "/-/media/longevity/expect/headers/3-what-expect-3_1.mp4",
+            ];
+
+            const videoMobileFiles = [
+                         "/-/media/longevity/expect/headers/1-what-to-expect_single-mobile.mp4",
+            ];
+        </script>
+        <video id="loopingVideo" autoplay="" muted="" aria-label="Clinic introduction video" playsinline="" src="/-/media/longevity/expect/headers/2-what-expect-3_1.mp4"></video>
+        <div class="video-overlay">
+            <div class="copy">
+                <div><h1>Human longevity Clinic</h1></div>
+                <div class="spacer-100" aria-hidden="true"></div>
+                <div><h2>What to Expect</h2></div>
+                <div class="spacer-50"></div>
+                <div class="large-text description">At our clinic, experts will work with you to ensure you have a detailed understanding of your health and aging. Using advanced assessments across multiple organ systems, we’ll create personalized strategies to help you live a healthier life for longer.</div>
+            </div>
+            <div class="bottomnmpattern">
+                <img src="/Areas/longevity/Content/img/bottomnmpattern.png" alt="Decorative pattern" aria-hidden="true">
+            </div>
+        </div>
+    </div>
+
+
+<div class="component-timeline" role="region" aria-label="Longevity Program Timeline">
+    <div class="timeline-title">
+        <h2>YOUR HUMAN LONGEVITY EXPERIENCE</h2>
+    </div>
+    <div class="timeline-container" tabindex="0" aria-label="Timeline days navigation">
+            <div id="event1" class="event">
+
+                <div class="inset-text-cta" style="top: ; left: ;">
+                    <h2>Half-Day Visit With Specialized Testing Across Multiple Organ Systems</h2>
+                    <div><p>Includes comprehensive longevity lab analysis, body composition, cardiopulmonary, neurocognitive, sensory, and musculoskeletal assessments, along with advanced epigenetic, molecular, and AI-based analyses for deeper insights.</p>
+<p>
+<a href="/about" target="_blank" class="cta button">View Full Assessment</a>
+</p></div>
+                </div>
+                <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/-/media/longevity/videos/expect/timeline/1-initial_visit-lores.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/-/media/longevity/expect/gettyimages-2164256964.jpg">
+
+            </div>
+            <div id="event2" class="event">
+
+                <div class="inset-text-cta" style="top: ; left: ;">
+                    <h2>Follow-Up Visit With Your Physician</h2>
+                    <div>Detailed consultation to review your results and receive personalized insights. Includes a customized report and lifestyle recommendations.</div>
+                </div>
+                <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/-/media/longevity/videos/expect/timeline/2-physician-lores.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/-/media/longevity/expect/gettyimages-2164256964.jpg">
+
+            </div>
+            <div id="event3" class="event">
+
+                <div class="inset-text-cta" style="top: ; left: ;">
+                    <h2>Meet Your Wellness Team</h2>
+                    <div>Consultations with an exercise physiologist and registered dietitian.  Together, you’ll create fitness and nutrition plans tailored to your needs, and set up your wellness platform profiles.</div>
+                </div>
+                <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/-/media/longevity/videos/expect/timeline/3-team-lores.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/-/media/longevity/expect/gettyimages-2164256964.jpg">
+
+            </div>
+            <div id="event4" class="event">
+
+                <div class="inset-text-cta" style="top: ; left: ;">
+                    <h2>Six Month<br>Follow-up</h2>
+                    <div>Repeat lab work to track progress and evaluate changes in key biomarkers.</div>
+                </div>
+                <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/-/media/longevity/videos/expect/timeline/4-6mnth-lores.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/-/media/longevity/expect/gettyimages-2164256964.jpg">
+
+            </div>
+            <div id="event5" class="event">
+
+                <div class="inset-text-cta" style="top: ; left: 400px;">
+                    <h2>Final Follow-Up</h2>
+                    <div><p>Review your results with your physician, celebrate progress and refine your health plan.</p>
+<p>
+<a href="" target="_blank" class="cta button plan-your-visit">Plan Your Visit</a>
+</p></div>
+                </div>
+                <video autoplay="" muted="" loop="" playsinline="">
+                    <source src="/-/media/longevity/videos/expect/timeline/5-seperated-lores.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="/-/media/longevity/expect/gettyimages-2164256964.jpg">
+
+            </div>
+    </div>
+    <div class="timeline-nav">
+
+
+            <div class="timeline-nav-item" data-event="event1">Initial Visit</div>
+            <div class="timeline-nav-item" data-event="event2">Follow-Up Visit With Your Physician</div>
+            <div class="timeline-nav-item" data-event="event3">Meet Your Wellness Team</div>
+            <div class="timeline-nav-item" data-event="event4">Six Month Follow-Up</div>
+            <div class="timeline-nav-item" data-event="event5">Final Follow-Up</div>
+    </div>
+</div>
+
+<div class="component-timeline-mobile" role="region" aria-label="Longevity Program Timeline">
+    <div class="timeline-title">
+        <h2>YOUR HUMAN LONGEVITY EXPERIENCE</h2>
+    </div>
+    <div class="images-container">
+        <div class="image-container active" data-event="event1"><img src="/-/media/longevity/expect/timelinemobile/1-Initial_visit.png" alt="Initial Visit"></div>
+        <div class="image-container" data-event="event2"><img src="/-/media/longevity/expect/timelinemobile/2_meet_physician.png" alt="Follow-Up With Your Physician"></div>
+        <div class="image-container" data-event="event3"><img src="/-/media/longevity/expect/timelinemobile/3_meet_team.png" alt="Meet Your Wellness Team"></div>
+        <div class="image-container" data-event="event4"><img src="/-/media/longevity/expect/timelinemobile/4_six_mnth_follow.png" alt="Six Month Follow-Up"></div>
+        <div class="image-container" data-event="event5"><img src="/-/media/longevity/expect/timelinemobile/5_final.png" alt="Final Follow-Up"></div>
+    </div>
+    <div class="timeline-nav">
+        <div class="timeline-nav-items">
+            <div class="timeline-nav-item active" data-event="event1" data-index="1"><span>Initial Visit</div>
+            <div class="timeline-nav-item" data-event="event2" data-index="2"><span>Follow-Up With Your Physician</span></div>
+            <div class="timeline-nav-item" data-event="event3" data-index="3"><span>Meet Your Wellness Team</span></div>
+            <div class="timeline-nav-item" data-event="event4" data-index="4"><span>Six Month Follow-Up</span></div>
+            <div class="timeline-nav-item" data-event="event5" data-index="5"><span>Final Follow-Up</span></div>
+        </div>
+        <div class="timeline-nav-bottom">
+            <div class="timeline-nav-icons">
+                <div class="menu-icon" id="menuIcon" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.07812 2H32.4679" stroke="#4E2A84" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M2 10H32.4678" stroke="#4E2A84" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M7.07812 18H32.4679" stroke="#4E2A84" stroke-width="3" stroke-linecap="round"></path>
+                    </svg>
+                </div>  
+                <div class="menu-close">
+                    <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 13H12.6092L7.50589 7.36936L2.33182 13H1L6.79873 6.76197L1.51859 1H2.89755L7.55304 6.16279L12.2439 1H13.5757L8.2602 6.75376L14 13Z" fill="#4E2A84" stroke="#4E2A84" stroke-linejoin="round"/>
+                    </svg>
+                </div>                  
+            </div>
+            <div class="nav-info-container">
+                <div class="nav-info-item"><span class="nav-info-index">1/5</span><span class="nav-info-title"> Initial Visit</span></div>
+            </div>        
+        </div>
+    </div>
+    <div class="timeline-info-container">
+        <div class="info-item active" data-event="event1">
+            <h3>What to Expect 1</h3>
+            <p>During your initial visit, you will meet with our team to discuss your health history and goals.</p>
+        </div>
+        <div class="info-item" data-event="event2">
+            <h3>What to Expect 2</h3>
+            <p>During your initial visit, you will meet with our team to discuss your health history and goals.</p>
+        </div>
+        <div class="info-item" data-event="event3">
+            <h3>What to Expect 3</h3>
+            <p>During your initial visit, you will meet with our team to discuss your health history and goals.</p>
+        </div>
+        <div class="info-item" data-event="event4">
+            <h3>What to Expect 4</h3>
+            <p>During your initial visit, you will meet with our team to discuss your health history and goals.</p>
+        </div>
+        <div class="info-item" data-event="event5">
+            <h3>What to Expect 5</h3>
+            <p>During your initial visit, you will meet with our team to discuss your health history and goals.</p>
+        </div>                                
+    </div>
+</div>
+
+<div class="component-assessment" role="region" aria-label="Full Multi-Organ Assessment">
+    <div class="slides-title">
+        <h2>COMPREHENSIVE MULTI-ORGAN ASSESSMENT</h2>
+    </div>
+    <div class="slides" tabindex="0" aria-label="Assessment slides navigation">
+
+        <div class="slides-title-nav">
+                <div class="slides-nav">
+                    <div class="slides-nav-item active" data-slide="slide1" tabindex="0" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Comprehensive Self-Assessments</div>
+                        <div class="content-container left-inner-container" style="display: none;">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/selfmobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+We use evidence-based surveys to better understand your health history and lifestyle. This helps identify risk factors and guide strategies for long-term wellness. Self-assessments also reveal areas where changes can support a better quality of life as you age
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide2" tabindex="1" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Biomarkers</div>
+                        <div class="content-container left-inner-container" style="display: none;">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/biomarkermobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+Comprehensive laboratory  tests offer insights into your body's systems and can detect early signs of inflammation, cardiovascular risks and metabolic issues. 
+</div>
+
+<div class="tests">
+<p>
+<strong>Comprehensive metabolic panel (CMP)</strong><br>
+Evaluates chemical balance and energy metabolism
+</p>
+<p>
+<strong>Hemoglobin A1c (HbA1c)</strong><br>
+Estimates average blood sugar level over three months; high levels may suggest risk of diabetes. 
+</p>
+<p>
+<strong>High-sensitivity C-reactive protein (Hs-CRP)</strong><br>
+Checks for inflammation in your body, which is linked with heart disease and other conditions.
+</p>
+<p>
+<strong>Apolipoprotein B(ApoB)</strong><br>
+Quantifies the number of potentially harmful lipid molecules. 
+</p>
+<p>
+<strong>Lipoprotein(a)(Lp(a))</strong><br>
+Measures a genetically modified inherited type of lipid molecule associated with a high risk of developing atherosclerotic cardiovascular disease. 
+</p>
+<p>
+<strong>Advanced lipids</strong><br>
+Measures cholesterol and fat molecules to assess your heart disease risk.
+</p>
+<p>
+<strong>Plasminogen activator inhibitor-1 (PAI-1)</strong><br>
+High levels of PAI-1 are linked to cellular aging.
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide3" tabindex="2" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Body Composition</div>
+                        <div class="content-container left-inner-container">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/body_compmobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+Analyzing fat distribution, especially visceral fat, helps assess risks for heart and metabolic conditions.
+</div>
+
+<div class="tests">
+<p>
+<strong>DXA Scan</strong><br>Measures fat and lean masses. Excess fat is associated with chronic inflammation and aging.
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide4" tabindex="3" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Cardiopulmonary Health</div>
+                        <div class="content-container left-inner-container">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/cardiomobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+Heart and lung function are key indicators of longevity. These tests help us detect early signs of disease and aging.
+</div>
+
+<div class="tests">
+<p>
+<strong>Blood pressure</strong><br>
+Measures the pressure in arteries while your heart pumps, which can detect high blood pressure
+</p>
+<p>
+<strong>Electrocardiogram (EKG)</strong><br>
+Evaluates heart rhythm and electrical activity
+</p>
+<p>
+<strong>Heart rate variability </strong><br>
+Reflects the health of the cardiovascular and autonomic nervous systems
+</p>
+<p>
+<strong>Pulse wave velocity</strong><br>
+Evaluates the stiffness of your arteries.
+</p>
+<p>
+<strong>Endothelial function</strong><br>
+Measures endothelial cell function, vital for blood flow. 
+</p>
+<p>
+<strong>Peak (VO2)</strong><br>
+Optimal indicator of cardiovascular fitness.
+</p>
+<p>
+<strong>Spirometry<br>
+(FVC, FEV, PEF)</strong><br>
+Tests your lung capacity and airflow.
+</p>
+<p>
+<strong>Pulse oximetry</strong><br>
+Measures blood oxygen saturation.
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide5" tabindex="4" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Neurocognitive &amp; Sensory Health</div>
+                        <div class="content-container left-inner-container">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/neuro-1mobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+Cognitive and sensory functions are essential for independence and quality of life. Declines may signal aging or neurological issues.
+</div>
+
+<div class="tests">
+<p>
+<strong>Cognitive assessment</strong><br>
+Screens for early cognitive decline.
+</p>
+<p>
+<strong>Olfactory function</strong><br>
+Assesses sense of smell, which may indicate accelerated aging.
+</p>
+<p>
+<strong>Auditory assessment</strong><br>
+Evaluates hearing loss, which affects social well-being.
+</p>
+<p>
+<strong>Retinal imaging</strong><br>
+Detects retinal abnormalities. 
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide6" tabindex="5" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Musculoskeletal Heath</div>
+                        <div class="content-container left-inner-container">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/musclemobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+<p>Strength and mobility are vital for aging well. Better physical function is linked to lower disease risk and longer life.</p>
+<p>Movement, strength, endurance, coordination and flexibility are all parts of physical function. Physical function and strength are key to healthy aging.</p>
+</div>
+
+<div class="tests">
+<p>
+<strong>Grip strength</strong>
+</p>
+<p>
+<strong>Lower extremity strength</strong>
+</p>
+<p>
+<strong>Balance</strong>
+</p>
+<p>
+<strong>Gait speed</strong>
+</p>
+<p>
+<strong>Functional mobility</strong>
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slides-nav">
+                    <div class="slides-nav-item " data-slide="slide7" tabindex="6" aria-label="Comprehensive Self-Assessments">
+                        <div class="title-container">Molecular Clocks &amp; AI-based Analysis</div>
+                        <div class="content-container left-inner-container">
+                            <div class="video-container">
+                                <video autoplay="" muted="" loop="" playsinline="">
+                                    <source src="/-/media/longevity/videos/expect/assessment/clock-2mobile.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="description">
+Biological age reflects how your body is aging, beyond your actual age. We use artificial intelligence (AI) and molecular clocks to help us identify aging patterns and health risks. 
+</div>
+
+<div class="tests">
+<p>
+<strong>Epigenetic Clocks</strong><br>Analyze DNA methylation to estimate biological age.
+</p>
+<p>
+<strong>ECG Analysis</strong><br>Artificial Intelligence (AI) evaluates heart data for aging markers.
+</p>
+<p>
+<strong>Retinal-based age:</strong><br>Artificial Intelligence (AI) evaluates retinal vasculature photographs to assess biological aging.
+</p>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+            <div class="slides-container">
+                    <div class="slide slide1 show" role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+We use evidence-based surveys to better understand your health history and lifestyle. This helps identify risk factors and guide strategies for long-term wellness. Self-assessments also reveal areas where changes can support a better quality of life as you age
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/self.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide2 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+Comprehensive laboratory  tests offer insights into your body's systems and can detect early signs of inflammation, cardiovascular risks and metabolic issues. 
+</div>
+
+<div class="tests">
+<p>
+<strong>Comprehensive metabolic panel (CMP)</strong><br>
+Evaluates chemical balance and energy metabolism
+</p>
+<p>
+<strong>Hemoglobin A1c (HbA1c)</strong><br>
+Estimates average blood sugar level over three months; high levels may suggest risk of diabetes. 
+</p>
+<p>
+<strong>High-sensitivity C-reactive protein (Hs-CRP)</strong><br>
+Checks for inflammation in your body, which is linked with heart disease and other conditions.
+</p>
+<p>
+<strong>Apolipoprotein B(ApoB)</strong><br>
+Quantifies the number of potentially harmful lipid molecules. 
+</p>
+<p>
+<strong>Lipoprotein(a)(Lp(a))</strong><br>
+Measures a genetically modified inherited type of lipid molecule associated with a high risk of developing atherosclerotic cardiovascular disease. 
+</p>
+<p>
+<strong>Advanced lipids</strong><br>
+Measures cholesterol and fat molecules to assess your heart disease risk.
+</p>
+<p>
+<strong>Plasminogen activator inhibitor-1 (PAI-1)</strong><br>
+High levels of PAI-1 are linked to cellular aging.
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/biomarker.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide3 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+Analyzing fat distribution, especially visceral fat, helps assess risks for heart and metabolic conditions.
+</div>
+
+<div class="tests">
+<p>
+<strong>DXA Scan</strong><br>Measures fat and lean masses. Excess fat is associated with chronic inflammation and aging.
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/biomarker.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide4 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+Heart and lung function are key indicators of longevity. These tests help us detect early signs of disease and aging.
+</div>
+
+<div class="tests">
+<p>
+<strong>Blood pressure</strong><br>
+Measures the pressure in arteries while your heart pumps, which can detect high blood pressure
+</p>
+<p>
+<strong>Electrocardiogram (EKG)</strong><br>
+Evaluates heart rhythm and electrical activity
+</p>
+<p>
+<strong>Heart rate variability </strong><br>
+Reflects the health of the cardiovascular and autonomic nervous systems
+</p>
+<p>
+<strong>Pulse wave velocity</strong><br>
+Evaluates the stiffness of your arteries.
+</p>
+<p>
+<strong>Endothelial function</strong><br>
+Measures endothelial cell function, vital for blood flow. 
+</p>
+<p>
+<strong>Peak (VO2)</strong><br>
+Optimal indicator of cardiovascular fitness.
+</p>
+<p>
+<strong>Spirometry<br>
+(FVC, FEV, PEF)</strong><br>
+Tests your lung capacity and airflow.
+</p>
+<p>
+<strong>Pulse oximetry</strong><br>
+Measures blood oxygen saturation.
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/cardio.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide5 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+Cognitive and sensory functions are essential for independence and quality of life. Declines may signal aging or neurological issues.
+</div>
+
+<div class="tests">
+<p>
+<strong>Cognitive assessment</strong><br>
+Screens for early cognitive decline.
+</p>
+<p>
+<strong>Olfactory function</strong><br>
+Assesses sense of smell, which may indicate accelerated aging.
+</p>
+<p>
+<strong>Auditory assessment</strong><br>
+Evaluates hearing loss, which affects social well-being.
+</p>
+<p>
+<strong>Retinal imaging</strong><br>
+Detects retinal abnormalities. 
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/neuro-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide6 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+<p>Strength and mobility are vital for aging well. Better physical function is linked to lower disease risk and longer life.</p>
+<p>Movement, strength, endurance, coordination and flexibility are all parts of physical function. Physical function and strength are key to healthy aging.</p>
+</div>
+
+<div class="tests">
+<p>
+<strong>Grip strength</strong>
+</p>
+<p>
+<strong>Lower extremity strength</strong>
+</p>
+<p>
+<strong>Balance</strong>
+</p>
+<p>
+<strong>Gait speed</strong>
+</p>
+<p>
+<strong>Functional mobility</strong>
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/muscle.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="slide slide7 " role="group" aria-label="Comprehensive Self-Assessments slide">
+                        <div class="left">
+                            <div class="left-inner-container">
+                                <div class="description">
+Biological age reflects how your body is aging, beyond your actual age. We use artificial intelligence (AI) and molecular clocks to help us identify aging patterns and health risks. 
+</div>
+
+<div class="tests">
+<p>
+<strong>Epigenetic Clocks</strong><br>Analyze DNA methylation to estimate biological age.
+</p>
+<p>
+<strong>ECG Analysis</strong><br>Artificial Intelligence (AI) evaluates heart data for aging markers.
+</p>
+<p>
+<strong>Retinal-based age:</strong><br>Artificial Intelligence (AI) evaluates retinal vasculature photographs to assess biological aging.
+</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <video autoplay="" muted="" loop="" aria-label="Self-assessment video" playsinline="">
+                                <source src="/-/media/longevity/videos/expect/assessment/clock-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+    <footer>
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <div>
+                <h2>Welcome To Better Aging</h2>
+                <p class="medium-text">Tailored strategies for your new journey.</p>
+                <a class="plan-your-visit button" href="/what-to-expect.html">Plan Your Visit</a>
+            </div>
+            <div>
+                <div class="footer-links">
+                    <div><a href="#" target="_blank">Patient Rights and Policies</a></div>
+                    <div><a href="#" target="_blank">Accessibility</a></div>
+                </div>
+            </div>
+            <p>© 2025 by Northwestern Medicine® and Northwestern Memorial HealthCare.<br />Northwestern Medicine® is a trademark of Northwestern Memorial HealthCare, used by Northwestern University.</p>
+<div class="disclaimer">
+    <p class="">
+        A biological age assessment represents a wellness consultation that is not covered by insurance. A biological age assessment is not a substitute for medical advice regarding the diagnosis, cure treatment, mitigation or prevention of any disease or other medical condition. Unless advised by your healthcare professional, biological age should not be used to determine or alter any health or medical treatments. Your biological age refers to the age as estimated by your physical health, which can be influenced by genetics, lifestyle and diet.
+    </p>          
+</div>           
+        </div>
+    </footer>    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+                
+                
+
+
+        $('.timeline-nav-item').click(function() {
+            // Update nav-info display
+            const currentIndex = $(this).data('index') || 1;
+            const totalItems = $('.component-timeline-mobile .timeline-nav-item').length;
+            $('.nav-info-index').text(currentIndex + '/' + totalItems);
+            $('.nav-info-title').text($(this).find('span').text());
+            console.log('clicked', $(this).data('event'));
+            
+            const targetEvent = $(this).data('event');
+            
+            // Remove active class from all timeline nav items
+            $('.timeline-nav-item').removeClass('active');
+            // Add active class to the clicked item
+            $(this).addClass('active');
+            
+            // Remove active class from all image-containers and info-items
+            $('.image-container').removeClass('active');
+            $('.info-item').removeClass('active');
+            
+            // Add active class to image-container and info-item with matching data-event
+            $('.image-container[data-event="' + targetEvent + '"]').addClass('active');
+            $('.info-item[data-event="' + targetEvent + '"]').addClass('active');
+            
+            const targetId = targetEvent;
+            const targetElement = $('#' + targetId);
+            if (targetElement.length) {
+                const parentOffset = $(targetElement)[0].offsetLeft;
+                const ctaOffset = $(targetElement).find('.inset-text-cta').position()?.left || 0;
+                const totalOffset = parentOffset + ctaOffset - 50;
+                
+                console.log('scrolling to', totalOffset);
+                $('.timeline-container').animate({
+                    scrollLeft: totalOffset
+                }, 800);
+            }
+
+        });
+
+
+               
+
+        $('.slides-nav-item').click(function() {
+            if (window.innerWidth < 786) {
+                var $content = $(this).find('.content-container');
+                // Close all others first
+                $('.slides-nav-item .content-container').not($content).slideUp(200);
+                if ($content.length) {
+                    if ($content.is(':visible')) {
+                        $content.stop(true, true).slideUp(200);
+                    } else {
+                        $content.stop(true, true).slideDown(300);
+                    }
+                }
+            } else {
+                // Desktop: keep default slide switching behavior
+                $('.slides-nav-item').removeClass('active');
+                $(this).addClass('active');
+                const targetId = $(this).data('slide');
+                const targetElement = $('.' + targetId);
+                if (targetElement.length) {
+                    $('.slide').removeClass('show');
+                    $(targetElement).addClass('show');
+                }
+            }
+        });
+
+    </script>   
+    
+    
+
+
+//Timeline Mobile Menu Scripts
+<script>
+$(document).ready(function() {
+    // Timeline mobile menu toggle functionality
+    $('.timeline-nav-bottom .menu-icon').click(function() {
+        const $timelineNavItems = $('.timeline-nav-items');
+        const $menuIcon = $(this);
+        const $menuClose = $('.timeline-nav-bottom .menu-close');
+        
+        // Show timeline nav items with slide up animation
+        $timelineNavItems.slideDown(400, function() {
+            // After animation completes, hide menu icon and show close icon
+            $menuIcon.hide();
+            $menuClose.show();
+        });
+    });
+    
+    $('.timeline-nav-bottom .menu-close').click(function() {
+        const $timelineNavItems = $('.timeline-nav-items');
+        const $menuIcon = $('.timeline-nav-bottom .menu-icon');
+        const $menuClose = $(this);
+        
+        // Hide timeline nav items with slide down animation
+        $timelineNavItems.slideUp(400, function() {
+            // After animation completes, show menu icon and hide close icon
+            $menuIcon.show();
+            $menuClose.hide();
+        });
+    });
+});
+</script>    
+</body>
+</html>

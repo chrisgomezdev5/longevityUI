@@ -1,0 +1,360 @@
+@import 'variables';
+
+.component-flipping-cards {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+
+    .cards-container {
+        display: flex;
+        //flex-wrap: wrap;
+        width: 250px;
+        max-width: 2000px;
+        height: auto;
+        margin: 0 auto;
+        overflow: visible;
+        justify-content: center;
+        gap: .5vw;
+
+        @media screen and (min-width: $tab-breakpoint) {
+            width: 100%;
+        }
+        // Only show up to 5 cards
+        > .flip-card:nth-child(n+6) {
+            //display: none;
+        }
+
+        .flip-card {
+            height: 450px;
+            width: 300px;
+            perspective: 1000px;
+            margin: 1vw 0;
+            flex: none;
+
+            @media screen and (min-width: $tab-breakpoint) {
+                height: 450px;
+                width: 300px;
+                margin: 1vw 0;
+                flex: none;
+            }
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+                transform-style: preserve-3d;
+                // Responsive adjustments
+                @media (max-width: 1200px) {
+                    .flipping-cards {
+                        gap: 1vw;
+                        max-width: 900px;
+                    }
+
+                    .flip-card {
+                        //max-width: 220px;
+                        //height: 320px;
+                    }
+                }
+
+                @media (max-width: 800px) {
+                    .flipping-cards {
+                        gap: 2vw;
+                        max-width: 100vw;
+                        padding: 0 2vw;
+                    }
+
+                    .flip-card {
+                        min-width: 140px;
+                        max-width: 180px;
+                        height: 200px;
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    .flipping-cards {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 4vw;
+                    }
+
+                    .flip-card {
+                        width: 90vw;
+                        min-width: unset;
+                        max-width: 95vw;
+                        height: 160px;
+                    }
+                }
+
+                .flip-card-front, .flip-card-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    border-radius: 20px;
+                    background: #fff;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                    background-repeat: no-repeat;
+                }
+
+                .flip-card-front {
+                    background-size: cover;
+
+                    .front-content-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(180deg, rgba(78, 42, 132, 0) 0%, rgba(78, 42, 132, 0.5) 100%);
+                        border-radius: 20px;
+                    }
+
+                    .title {
+                        position: absolute;
+                        bottom: 5px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                        display: flex;
+                        width: 200px;
+
+                        h2 {
+                            color: #FFF;
+                            text-align: center;
+                            font-family: "Open Sans";
+                            font-size: 32px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 110%; /* 35.2px */
+                            width: 100%;
+                        }
+                    }
+                }
+
+
+                .flip-card-back {
+                    transform: rotateY(180deg);
+                    background: $NM-Purple-prp-10;
+                    color: $NM-Purple-prp-110;
+                    text-align: left;
+
+
+
+                    .back-content {
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+
+                        h2 {
+                            color: var(--NM-Purple-prp-110, #482476);
+                            font-family: "Open Sans";
+                            font-size: 22px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 30px; /* 125% */
+                            text-align: left;
+                            margin: 0px;
+                            //position: absolute;
+                            //top: 2vw;
+                        }
+
+                        .middle-text {
+                            color: var(--NM-Purple-prp-110, #482476);
+                            font-family: "Open Sans";
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 28px; /* 155.556% */
+                            letter-spacing: 0.18px;
+                            text-align: left;
+                            padding-top: 30px;
+                            //position: absolute;
+                            //top: 5vw;
+                        }
+
+                        .bottom-text {
+                            //position: absolute;
+                            //top: 15vw;
+                            padding-right: 20px;
+                            color: var(--NM-Purple-prp-110, #482476);
+                            font-family: "Open Sans";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 22px; /* 137.5% */
+                            letter-spacing: 0.16px;
+                            text-align: left;
+                            padding-bottom: 10px;
+                        }
+
+                        @media screen and (min-width: 1200px) {
+                            h2 {
+                                //line-height: 40px;
+                            }
+
+                            .middle-text {
+                                //top: 8vw;
+                            }
+
+                            .bottom-text {
+                                //top: 30vw;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .flip-card-inner {
+                    transform: rotateY(180deg);
+                    cursor: pointer;
+                }
+            }
+
+            &.is-cta {
+                .flip-card-front {
+
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-decoration: none;
+                        height: 100%;
+
+                        .title {
+                            position: unset;
+                            transform: none;
+                            display: block;
+                            z-index: 2;
+                            padding: 30px;
+
+                            h2 {
+                                color: #FFF;
+                                font-family: "Open Sans";
+                                font-size: 32px;
+                                font-style: normal;
+                                font-weight: 300;
+                                line-height: 40px; /* 125% */
+                            }
+                        }
+
+                        .description {
+                            color: #FFF;
+                            font-family: "Open Sans";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 22px;
+                            letter-spacing: 0.16px;
+                            z-index: 2;
+                            text-align: left;
+                            padding: 30px;
+                        }
+
+                        .front-content-overlay {
+                            background: $NM-Purple-prp-MAIN;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .flip-card-inner {
+                        transform: none;
+                    }
+
+
+
+                    .flip-card-front {
+                        a {
+                            .title {
+                                h2 {
+                                    color: #4E2A84;
+                                }
+                            }
+
+                            .description {
+                                color: #4E2A84;
+                            }
+
+                            .front-content-overlay {
+                                background: $NM-Purple-prp-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .slides-nav {
+        position: absolute;
+        bottom: -50px;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 2;
+        max-width: 1400px;
+        margin: auto;
+
+        @media screen and (min-width: $tab-breakpoint) {
+            //top: 50%;
+            //bottom: unset;
+        }
+
+        .prev-button, .next-button {
+            width: 40px;
+            height: 40px;
+            pointer-events: all;
+
+
+            @media screen and (min-width: $tab-breakpoint) {
+                background-size: contain;
+                //background-color: unset;
+            }
+
+            svg {
+                path {
+                    fill: $NM-Purple-prp-MAIN;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    path {
+                        fill: #B6ACD1;
+                    }
+                }
+            }
+        }
+
+        .prev-button {
+            margin-left: 10px;
+
+            &.hide {
+                //display: none;
+            }
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        .next-button {
+            margin-right: 10px;
+
+            &.hide {
+                //display: none;
+            }
+
+            svg {
+
+            }
+        }
+    }
+}

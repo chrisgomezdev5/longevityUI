@@ -1,0 +1,389 @@
+html, body {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Open Sans', sans-serif;
+    height: 2000px;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+nav {
+    width: 100%;
+    padding: 50px;
+    flex-shrink: 0;
+    background: #4E2A84;
+    display: flex;
+}
+
+nav.home {
+    background: linear-gradient(to bottom, #4E2A84, #4E2A8400);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+nav .logo {
+    width: 30%;
+}
+
+nav .menu {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding-left: 120px;
+}
+
+nav .menu a.button {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #4E2A84;
+    font-weight: bold;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.component2 {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.component2 svg {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.component3 {
+    position: relative;
+}
+
+.timeline-container {
+    display: flex;
+    position: relative;
+    height: 800px;
+    background-color: #fff;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+
+.day-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.day {
+
+    width: 450px; /* Adjust width */
+    height: 100%;   
+
+}
+
+.parallelogram {
+    transform: skew(20deg); /* Skew angle */
+    border-right: 10px solid #fff;
+    border-left: 10px solid #fff;
+}
+
+.day video {
+    width: auto;
+    height: 100%;
+}
+
+.day1 {
+    z-index: 1;
+    width: 1000px;
+}
+
+.day1 video {
+
+}
+
+.day2 {
+    z-index: 2;
+    width: 800px;
+}
+
+.day2 .day-container {
+    left: -200px;
+}
+
+.day2 video {
+
+}
+
+.day3 {
+    z-index: 1;
+    width: 1000px;
+}
+
+.day3 .day-container {
+    left: -330px;
+}
+
+.day3 video {
+
+}
+
+.day4 {
+    width: 550px;
+}
+
+.day4 .day-container {
+    left: -330px;
+}
+
+.day4 .event {
+    width: 100%;
+    height: 50%;
+    border: 10px solid #fff;
+    border-top: none;
+}
+
+.day4 .event1 {
+    position: relative;
+}
+
+.day4 .event2 {
+    position: relative;
+}
+
+.day4 .event1 video {
+    width: 700px;
+    height: auto;
+    position: relative;
+}
+
+.day4 .event2 video {
+    width: 700px;
+    height: auto;
+    position: relative;
+}
+
+.day5 {
+    width: 1300px; /* Adjust width */
+    z-index: 1;
+}
+
+.day5 .day-container {
+    left: -320px;
+}
+
+.day5 video {
+
+}
+
+
+.day6 {
+    z-index: 2;
+    width: 800px;
+}
+
+.day6 .day-container {
+        left: -470px;
+}
+
+.day6 video {
+
+}
+
+.day7 {
+    z-index: 1;
+    width: 1000px;
+}
+
+.day7 .day-container {
+    left: -600px;
+}
+
+.day7 video {
+
+}
+
+.day8 {
+    width: 550px;
+}
+
+.day8 .day-container {
+    left: -600px;
+}
+
+.day8 .event {
+    width: 100%;
+    height: 50%;
+    border: 10px solid #fff;
+    border-top: none;
+}
+
+.day8 .event1 {
+    position: relative;
+}
+
+.day8 .event2 {
+    position: relative;
+}
+
+.day8 .event1 video {
+    width: 700px;
+    height: auto;
+    position: relative;
+}
+
+.day8 .event2 video {
+    width: 700px;
+    height: auto;
+    position: relative;
+}
+
+
+.day9 {
+    width: 1300px; /* Adjust width */
+    z-index: 1;
+}
+
+.day9 .day-container {
+    left: -590px;
+}
+
+.day9 video {
+
+}
+
+
+.day10 {
+    z-index: 2;
+    width: 800px;
+}
+
+.day10 .day-container {
+    left: -740px;
+}
+
+.day10 video {
+
+}
+
+.day11 {
+    z-index: 1;
+    width: 1200px;
+}
+
+.day11 .day-container {
+    left: -870px;
+}
+
+.day11 video {
+
+}
+
+
+.day12 {
+    width: 1300px; /* Adjust width */
+    z-index: 1;
+}
+
+.day12 .day-container {
+    left: -860px;
+}
+
+.day12 video {
+
+}
+
+
+.day13 {
+    z-index: 2;
+    width: 800px;
+}
+
+.day13 .day-container {
+    left: -1010px;
+}
+
+.day13 video {
+
+}
+
+.timeline-nav {
+    display: inline-flex;
+    padding: 1px;
+    align-items: anchor-center;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.40);
+    position: absolute;
+    bottom: 100px;
+    width: 900px;
+    height: 50px;
+    z-index: 5;
+    justify-content: space-around;
+    left: 100px;
+}
+
+.timeline-nav div {
+    color: #4E2A84;
+}
+
+.timeline-nav div:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.inset-text-cta {
+    border-radius: 29.475px;
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: 0 0.982px 98.25px 9.825px rgba(255, 255, 255, 0.20) inset;
+    z-index: 5;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+}
+
+#day1 {
+
+    .inset-text-cta {
+
+    }
+}
+
+#day9 {
+
+    .inset-text-cta {
+        left: 100px;
+    }
+}
+
+#day11 {
+
+    .inset-text-cta {
+        left: 350px;
+    }
+}
