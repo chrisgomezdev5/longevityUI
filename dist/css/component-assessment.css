@@ -1,0 +1,222 @@
+.component-assessment {
+  position: relative;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment {
+    height: 1000px;
+  }
+}
+.component-assessment .slides-title {
+  width: 100%;
+  text-align: center;
+}
+.component-assessment .slides-title h2 {
+  color: #4E2A84;
+  font-weight: 700;
+}
+.component-assessment .slides {
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides {
+    display: flex;
+  }
+}
+.component-assessment .slides .slides-title-nav {
+  width: 100%;
+  padding-top: 25px;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-title-nav {
+    width: 25%;
+    min-width: 350px;
+    padding-top: 0px;
+  }
+}
+.component-assessment .slides .slides-title-nav .slides-nav {
+  display: block;
+  padding: 1px;
+  align-items: anchor-center;
+  border-radius: 40px;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-title-nav .slides-nav {
+    display: inline-flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item {
+    width: 310px;
+  }
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item:hover {
+    color: #9b7dc7;
+  }
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .title-container {
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27.486px; /* 171.79% */
+  letter-spacing: 0.16px;
+  background-color: #E4E0EE;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item.active .title-container {
+  background-color: #4E2A84;
+  color: white;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container {
+  display: none;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .video-container {
+  width: 150px;
+  float: right;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .video-container video {
+  width: 150px;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .description, .component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container p {
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 160%; /* 32px */
+  text-align: left;
+  padding-top: 5px;
+  text-align: left;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .description, .component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container p {
+    padding-top: unset;
+  }
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .tests {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.component-assessment .slides .slides-title-nav .slides-nav .slides-nav-item .content-container .tests p {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.16px;
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  text-align: left;
+  margin: 10px;
+}
+.component-assessment .slides .slides-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-container {
+    width: 75%;
+  }
+}
+.component-assessment .slides .slides-container .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  display: none;
+  overflow: hidden;
+}
+.component-assessment .slides .slides-container .slide.show {
+  display: flex;
+}
+.component-assessment .slides .slides-container .slide .left {
+  display: none;
+  width: 100%;
+  z-index: 2;
+}
+@media screen and (min-width: 768px) {
+  .component-assessment .slides .slides-container .slide .left {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-assessment .slides .slides-container .slide .left {
+    width: 50%;
+  }
+}
+.component-assessment .slides .slides-container .slide .left .left-inner-container {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  color: #4E2A84;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: rgba(228, 224, 238, 0.3);
+}
+.component-assessment .slides .slides-container .slide .left .left-inner-container.wide {
+  max-width: 600px;
+  width: 100%;
+}
+.component-assessment .slides .slides-container .slide .left .left-inner-container .description, .component-assessment .slides .slides-container .slide .left .left-inner-container p {
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 160%; /* 32px */
+  text-align: left;
+}
+.component-assessment .slides .slides-container .slide .left .left-inner-container .tests {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.component-assessment .slides .slides-container .slide .left .left-inner-container .tests p {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.16px;
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  text-align: left;
+  margin: 10px;
+}
+.component-assessment .slides .slides-container .slide .right {
+  width: 50%;
+  display: none;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .component-assessment .slides .slides-container .slide .right {
+    display: inline;
+  }
+}
+.component-assessment .slides .slides-container .slide .right video {
+  position: absolute;
+  right: 0px;
+  width: 40vw;
+  top: -30px;
+}

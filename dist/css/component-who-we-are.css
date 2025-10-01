@@ -1,0 +1,309 @@
+.component-who-we-are {
+  color: #4E2A84;
+  position: relative;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are {
+    padding: 0px;
+  }
+}
+.component-who-we-are .cta {
+  padding: 10px 40px;
+  background-color: #4E2A84;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+.component-who-we-are .section {
+  border-left: 1px solid #4E2A84;
+  padding-left: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section {
+    border-left: none;
+    padding-left: unset;
+  }
+}
+.component-who-we-are .section.hide-mobile {
+  display: none;
+  visibility: hidden;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.hide-mobile {
+    display: block;
+    visibility: visible;
+  }
+}
+.component-who-we-are .section.section1 {
+  height: 100%;
+}
+.component-who-we-are .section.section1 .component-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.component-who-we-are .section.section1 .component-title h2 {
+  color: #4E2A84;
+  font-weight: 700;
+  font-size: 32px;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section1 .component-title h2 {
+    position: relative;
+    width: 300px;
+    margin: auto;
+    padding-top: 50px;
+  }
+}
+.component-who-we-are .section.section1 .svg-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.component-who-we-are .section.section1 .svg-background svg {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+.component-who-we-are .section.section1 .right .content {
+  color: #000;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section1 .right .content {
+    width: 450px;
+    margin: unset;
+  }
+}
+.component-who-we-are .section.section1 .right .content .text-2 {
+  font-size: 16px;
+}
+.component-who-we-are .section.section1 .right .content svg {
+  width: 100%;
+}
+.component-who-we-are .section.section2 .right .content {
+  padding: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section2 .right .content {
+    padding: 0px;
+  }
+}
+.component-who-we-are .section.section2 .right .chart img {
+  width: 100%;
+}
+.component-who-we-are .section.section2 .right .chart svg {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .component-who-we-are .section.section2 .right .doctor-quote {
+    display: flex;
+  }
+}
+.component-who-we-are .section.section2 .right .doctor-quote .quote {
+  padding-top: 50px;
+  color: #000;
+}
+@media screen and (min-width: 1200px) {
+  .component-who-we-are .section.section2 .right .doctor-quote .quote {
+    padding: 20px;
+    padding-top: 50px;
+  }
+}
+.component-who-we-are .section.section2 .right .doctor-quote .quote div {
+  margin-bottom: 20px;
+}
+.component-who-we-are .section.section2 .right .doctor-quote .quote div span {
+  display: block;
+}
+.component-who-we-are .section.section2 .right .doctor-quote .quote div .name {
+  color: #4E2A84;
+  font-weight: 700;
+}
+.component-who-we-are .section.section3 {
+  position: relative;
+}
+.component-who-we-are .section.section3 .component-timeline {
+  margin-top: 50px;
+  position: absolute;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section3 .component-timeline .timeline-container {
+    width: 46.5vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section3 .component-timeline .timeline-container .event {
+    width: 130vw;
+  }
+}
+.component-who-we-are .section.section3 .play-timeline-button {
+  position: absolute;
+  top: 410px;
+  left: 10vw;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section3 .play-timeline-button {
+    top: 270px;
+    left: 90vw;
+  }
+}
+.component-who-we-are .section.section3 .play-timeline-button:hover {
+  cursor: pointer;
+}
+.component-who-we-are .section.section3 .play-timeline-button:hover svg path {
+  fill: #CCC4DF;
+}
+.component-who-we-are .section.section4 {
+  position: relative;
+  margin-bottom: 80px;
+}
+.component-who-we-are .section.section4 .right .content {
+  position: relative;
+}
+.component-who-we-are .section.section4 .right .content .team-members {
+  display: flex;
+  overflow-x: scroll;
+  position: absolute;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section4 .right .content .team-members {
+    width: 46.5vw;
+  }
+}
+.component-who-we-are .section.section4 .right .content .play-team-button {
+  position: absolute;
+  top: 100px;
+  left: 15vw;
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section4 .right .content .play-team-button {
+    top: 130px;
+    left: 35vw;
+  }
+}
+.component-who-we-are .section.section4 .right .content .play-team-button:hover {
+  cursor: pointer;
+}
+.component-who-we-are .section.section4 .right .content .play-team-button:hover svg path {
+  fill: #CCC4DF;
+}
+.component-who-we-are .section.light-purple {
+  background-color: #E4E0EE;
+}
+.component-who-we-are .section .team-members {
+  display: flex;
+  overflow-x: scroll;
+  position: absolute;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .team-members {
+    width: 46.5vw;
+  }
+}
+.component-who-we-are .section .team-members .member {
+  margin-right: 5px;
+  height: 360px;
+  overflow-y: clip;
+}
+.component-who-we-are .section .section-inner-container {
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+}
+@media screen and (min-width: 390px) {
+  .component-who-we-are .section .section-inner-container {
+    min-height: 80vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container {
+    min-height: 50vh;
+    display: flex;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container {
+    min-height: 80vh;
+  }
+}
+.component-who-we-are .section .section-inner-container .left {
+  width: 100%;
+  height: auto;
+  text-align: right;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .left {
+    width: 50%;
+    border-right: 2px solid #4E2A84;
+    border-bottom: none;
+  }
+}
+.component-who-we-are .section .section-inner-container .left .content {
+  width: 100%;
+}
+.component-who-we-are .section .section-inner-container .left .content h2 {
+  color: var(--NM-Purple-prp-MAIN, #4E2A84);
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 160%; /* 38.4px */
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .left .content h2 {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .left .content {
+    width: 400px;
+    float: right;
+    text-align: right;
+    padding: 50px;
+  }
+}
+.component-who-we-are .section .section-inner-container .left .content p {
+  margin: 0px;
+  margin-bottom: 30px;
+}
+.component-who-we-are .section .section-inner-container .right {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .right {
+    width: 50%;
+    border-left: 2px solid #4E2A84;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .right .content {
+    padding: 50px;
+  }
+}
+.component-who-we-are .section .section-inner-container .right .content div {
+  margin-bottom: 50px;
+}
+.component-who-we-are .component-footer .footer-inner-container {
+  width: 90%;
+  margin: auto;
+  font-style: italic;
+  opacity: 0.7;
+  text-align: left;
+}
