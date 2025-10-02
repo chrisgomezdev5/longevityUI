@@ -112,13 +112,11 @@
 .component-transition-copy.mobile #intro-copy2b p {
   color: #000;
   text-align: center;
-  /* H2 */
   font-family: "Open Sans";
-  font-size: 14px;
+  font-size: 0.875em;
   font-style: normal;
   font-weight: 450;
-  line-height: 160%; /* 38.4px */
-  padding: 10px;
+  line-height: 160%;
 }
 .component-transition-copy.mobile #intro-copy2b img {
   width: 10vw;

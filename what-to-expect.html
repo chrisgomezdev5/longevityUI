@@ -842,6 +842,9 @@ Biological age reflects how your body is aging, beyond your actual age. We use a
 
         $('.slides-nav-item').click(function() {
             if (window.innerWidth < 786) {
+                // Desktop: keep default slide switching behavior
+                $('.slides-nav-item').removeClass('active');
+                $(this).addClass('active');
                 var $content = $(this).find('.content-container');
                 // Close all others first
                 $('.slides-nav-item .content-container').not($content).slideUp(200);

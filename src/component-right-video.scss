@@ -33,12 +33,21 @@
                 color: var(--NM-Purple-prp-MAIN, #4E2A84);
                 text-align: center;
                 font-family: "Open Sans";
-                font-size: 30px;
+                font-size: 1.125em;
                 font-style: normal;
                 font-weight: 700;
-                letter-spacing: 1.2px;
-                text-transform: uppercase;
-                line-height: 120%;
+                line-height: 110%;
+                letter-spacing: .75px;
+                text-transform: uppercase;      
+
+                @media screen and (min-width: $tab-breakpoint) {
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 24px; /* 80% */
+                    letter-spacing: 1.2px;
+                    text-transform: uppercase;
+                }
 
                 @media screen and (min-width: $desktop-breakpoint) {
                     line-height: 160%;
@@ -100,10 +109,10 @@
     .video-content {
         position: absolute;
         right: -200px;
-        top: 300px;
+        top: 200px;
         @media screen and (min-width: $desktop-breakpoint) {
-            right: -400px;
-            top: unset;
+            right: -200px;
+            top: 50px;
         }         
         video {
             width: 110%;

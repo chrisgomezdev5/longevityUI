@@ -176,17 +176,20 @@
                 text-align: left;
             }
 
+            h3 {
+                font-size: 1.25em;
+                line-height: 140%;                
+            }
+
             p, div {
                 color: var(--NM-Purple-prp-MAIN, #4E2A84);
-
-                /* Mobile/P */
                 font-family: "Open Sans";
-                font-size: 11px;
+                font-size: .875em;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 150%; /* 16.5px */
-                letter-spacing: 0.11px;
-                text-align: left;
+                line-height: 160%;
+                letter-spacing: .11px;
+                text-align: left;                
             }
         }
     }
@@ -212,7 +215,7 @@
     .timeline-container {
         display: flex;
         position: relative;
-        height: 800px;
+        height: 700px;
         background-color: #fff;
         overflow: hidden;
         overflow-x: scroll;

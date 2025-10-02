@@ -52,11 +52,6 @@
                         gap: 1vw;
                         max-width: 900px;
                     }
-
-                    .flip-card {
-                        //max-width: 220px;
-                        //height: 320px;
-                    }
                 }
 
                 @media (max-width: 800px) {
@@ -141,8 +136,6 @@
                     color: $NM-Purple-prp-110;
                     text-align: left;
 
-
-
                     .back-content {
                         padding: 20px;
                         display: flex;
@@ -158,8 +151,6 @@
                             line-height: 30px; /* 125% */
                             text-align: left;
                             margin: 0px;
-                            //position: absolute;
-                            //top: 2vw;
                         }
 
                         .middle-text {
@@ -172,13 +163,9 @@
                             letter-spacing: 0.18px;
                             text-align: left;
                             padding-top: 30px;
-                            //position: absolute;
-                            //top: 5vw;
                         }
 
                         .bottom-text {
-                            //position: absolute;
-                            //top: 15vw;
                             padding-right: 20px;
                             color: var(--NM-Purple-prp-110, #482476);
                             font-family: "Open Sans";
@@ -189,20 +176,6 @@
                             letter-spacing: 0.16px;
                             text-align: left;
                             padding-bottom: 10px;
-                        }
-
-                        @media screen and (min-width: 1200px) {
-                            h2 {
-                                //line-height: 40px;
-                            }
-
-                            .middle-text {
-                                //top: 8vw;
-                            }
-
-                            .bottom-text {
-                                //top: 30vw;
-                            }
                         }
                     }
                 }
@@ -302,11 +275,6 @@
         max-width: 1400px;
         margin: auto;
 
-        @media screen and (min-width: $tab-breakpoint) {
-            //top: 50%;
-            //bottom: unset;
-        }
-
         .prev-button, .next-button {
             width: 40px;
             height: 40px;
@@ -315,7 +283,6 @@
 
             @media screen and (min-width: $tab-breakpoint) {
                 background-size: contain;
-                //background-color: unset;
             }
 
             svg {
@@ -334,12 +301,6 @@
         }
 
         .prev-button {
-            margin-left: 10px;
-
-            &.hide {
-                //display: none;
-            }
-
             svg {
                 transform: rotate(180deg);
             }
@@ -347,14 +308,6 @@
 
         .next-button {
             margin-right: 10px;
-
-            &.hide {
-                //display: none;
-            }
-
-            svg {
-
-            }
         }
     }
 }

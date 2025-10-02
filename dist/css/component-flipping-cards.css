@@ -242,9 +242,6 @@
 .component-flipping-cards .slides-nav .prev-button svg:hover path, .component-flipping-cards .slides-nav .next-button svg:hover path {
   fill: #B6ACD1;
 }
-.component-flipping-cards .slides-nav .prev-button {
-  margin-left: 10px;
-}
 .component-flipping-cards .slides-nav .prev-button svg {
   transform: rotate(180deg);
 }

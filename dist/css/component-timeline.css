@@ -148,14 +148,17 @@
   line-height: 140%; /* 22.4px */
   text-align: left;
 }
+.component-timeline-mobile .timeline-info-container .info-item h3 {
+  font-size: 1.25em;
+  line-height: 140%;
+}
 .component-timeline-mobile .timeline-info-container .info-item p, .component-timeline-mobile .timeline-info-container .info-item div {
   color: var(--NM-Purple-prp-MAIN, #4E2A84);
-  /* Mobile/P */
   font-family: "Open Sans";
-  font-size: 11px;
+  font-size: 0.875em;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 16.5px */
+  line-height: 160%;
   letter-spacing: 0.11px;
   text-align: left;
 }
@@ -180,7 +183,7 @@
 .component-timeline .timeline-container {
   display: flex;
   position: relative;
-  height: 800px;
+  height: 700px;
   background-color: #fff;
   overflow: hidden;
   overflow-x: scroll;
