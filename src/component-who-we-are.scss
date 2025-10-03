@@ -73,7 +73,8 @@
                         font-size: 24px;
                         font-style: normal;
                         font-weight: 450;
-                        line-height: 160%; /* 38.4px */   
+                        line-height: 160%; /* 38.4px */  
+                        position: relative; 
                         
                         @media screen and (min-width: $desktop-breakpoint) {
                             text-align: right;
@@ -89,6 +90,11 @@
                     p {
                         margin: 0px;
                         margin-bottom: 30px;
+                    }
+
+                    sup {
+                        position: absolute;
+                        bottom: 7px;
                     }
                 }
             }
@@ -192,6 +198,10 @@
                     p, div {
                         text-align: center;
                     }
+
+                    .video {
+                        margin: 30px
+                    }
                 }
             }
         }
@@ -225,6 +235,9 @@
 
                 .doctor-quote {
 
+                    div {
+                        margin-bottom: 0px;
+                    }
 
                     @media screen and (min-width: 1200px) {
                         display: flex;
@@ -253,6 +266,12 @@
                             }
                         }
                     }
+
+
+                }
+
+                .age-container {
+
                 }
             }
         }
@@ -264,6 +283,19 @@
                 margin-top: 50px;
                 position: absolute;
 
+                ::-webkit-scrollbar {
+                    height: 20px; /* Sets the thickness of the horizontal scrollbar */
+                    background-color: $NM-Purple-prp-20; /* Optional: styles the track */
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background-color: $NM-Purple-prp-20; /* Optional: styles the thumb */
+                    border-radius: 6px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    background-color: #f0f0f0; /* Optional: styles the track */
+                }
 
 
                 .timeline-container {
@@ -314,8 +346,26 @@
                         position: absolute;
                         width: 100%;
 
+                        &::-webkit-scrollbar {
+                            height: 20px; /* Sets the thickness of the horizontal scrollbar */
+                            background-color: $NM-Purple-prp-20; /* Optional: styles the track */
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $NM-Purple-prp-20; /* Optional: styles the thumb */
+                            border-radius: 6px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: #f0f0f0; /* Optional: styles the track */
+                        }            
+                                    
                         @media screen and (min-width: $desktop-breakpoint) {
                             width: 46.5vw;
+                        }
+
+                        .photo {
+                            //height: 370px;
                         }
                     }
 
@@ -367,11 +417,13 @@
 
     .component-footer {
         .footer-inner-container {
-            width: 90%;
-            margin: auto;
-            font-style: italic;
-            opacity: .7;
-            text-align: left;
+                width: 90%;
+                margin: auto;
+            p {
+                color: #A495C3;
+                text-align: left;
+                font-size: 16px;                
+            }
         }
     }
 }

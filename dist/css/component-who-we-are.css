@@ -74,6 +74,7 @@
   font-style: normal;
   font-weight: 450;
   line-height: 160%; /* 38.4px */
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section .section-inner-container .left .content h2 {
@@ -91,6 +92,10 @@
 .component-who-we-are .section .section-inner-container .left .content p {
   margin: 0px;
   margin-bottom: 30px;
+}
+.component-who-we-are .section .section-inner-container .left .content sup {
+  position: absolute;
+  bottom: 7px;
 }
 .component-who-we-are .section .section-inner-container .right {
   width: 100%;
@@ -176,6 +181,9 @@
 .component-who-we-are .section.section1 .right .content p, .component-who-we-are .section.section1 .right .content div {
   text-align: center;
 }
+.component-who-we-are .section.section1 .right .content .video {
+  margin: 30px;
+}
 .component-who-we-are .section.section2 .right .content {
   padding: 10px;
 }
@@ -193,6 +201,9 @@
 }
 .component-who-we-are .section.section2 .right .chart svg {
   width: 100%;
+}
+.component-who-we-are .section.section2 .right .doctor-quote div {
+  margin-bottom: 0px;
 }
 @media screen and (min-width: 1200px) {
   .component-who-we-are .section.section2 .right .doctor-quote {
@@ -225,6 +236,17 @@
 .component-who-we-are .section.section3 .component-timeline {
   margin-top: 50px;
   position: absolute;
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar {
+  height: 20px; /* Sets the thickness of the horizontal scrollbar */
+  background-color: #CCC4DF; /* Optional: styles the track */
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar-thumb {
+  background-color: #CCC4DF; /* Optional: styles the thumb */
+  border-radius: 6px;
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Optional: styles the track */
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section3 .component-timeline .timeline-container {
@@ -265,6 +287,17 @@
   overflow-x: scroll;
   position: absolute;
   width: 100%;
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar {
+  height: 20px; /* Sets the thickness of the horizontal scrollbar */
+  background-color: #CCC4DF; /* Optional: styles the track */
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar-thumb {
+  background-color: #CCC4DF; /* Optional: styles the thumb */
+  border-radius: 6px;
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Optional: styles the track */
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section4 .right .content .team-members {
@@ -311,7 +344,9 @@
 .component-who-we-are .component-footer .footer-inner-container {
   width: 90%;
   margin: auto;
-  font-style: italic;
-  opacity: 0.7;
+}
+.component-who-we-are .component-footer .footer-inner-container p {
+  color: #A495C3;
   text-align: left;
+  font-size: 16px;
 }

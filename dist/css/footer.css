@@ -4,6 +4,11 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    height: 473px;
+  }
+}
 footer .footer-overlay {
   position: absolute;
   width: 100%;
@@ -21,6 +26,11 @@ footer .footer-content {
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-content {
+    height: 95%;
+  }
 }
 footer .footer-content h2 {
   color: #E4E0EE;
@@ -74,8 +84,6 @@ footer .footer-content a.button {
   color: #4E2A84;
   padding: 15px 30px;
   font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 50px;
   font-size: 20px;
   text-decoration: none;
 }

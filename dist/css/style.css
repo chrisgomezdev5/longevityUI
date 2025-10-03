@@ -202,6 +202,11 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    height: 473px;
+  }
+}
 footer .footer-overlay {
   position: absolute;
   width: 100%;
@@ -219,6 +224,11 @@ footer .footer-content {
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
+}
+@media screen and (min-width: 768px) {
+  footer .footer-content {
+    height: 95%;
+  }
 }
 footer .footer-content h2 {
   color: #E4E0EE;
@@ -272,8 +282,6 @@ footer .footer-content a.button {
   color: #4E2A84;
   padding: 15px 30px;
   font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 50px;
   font-size: 20px;
   text-decoration: none;
 }
@@ -393,25 +401,30 @@ footer .footer-content .footer-links a {
 .component-video-carousel {
   position: relative;
   overflow: hidden;
-  max-height: 768px;
-  max-height: 860px;
+  min-height: 420px;
 }
 .component-video-carousel.tall {
   max-height: 900px;
 }
 @media screen and (min-width: 768px) {
   .component-video-carousel {
-    height: 100vh;
+    min-height: 668px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-video-carousel {
+    min-height: 768px;
   }
 }
 .component-video-carousel video {
   height: -webkit-fill-available;
+  width: -webkit-fill-available;
   display: block;
 }
 @media screen and (min-width: 1024px) {
   .component-video-carousel video {
-    height: auto;
     width: -webkit-fill-available;
+    height: auto;
   }
 }
 .component-video-carousel .video-overlay {
@@ -623,14 +636,22 @@ footer .footer-content .footer-links a {
 .component-transition-copy.mobile #intro-copy1b h2 {
   color: #4E2A84;
   text-align: center;
-  /* H3 */
   font-family: "Open Sans";
-  font-size: 20px;
+  font-size: 1.125em;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px; /* 80% */
-  letter-spacing: 1.2px;
+  line-height: 110%;
+  letter-spacing: 0.75px;
   text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .component-transition-copy.mobile #intro-copy1b h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 80% */
+    letter-spacing: 1.2px;
+  }
 }
 .component-transition-copy.mobile #intro-copy2b {
   position: absolute;
@@ -1733,6 +1754,7 @@ footer .footer-content .footer-links a {
   font-style: normal;
   font-weight: 450;
   line-height: 160%; /* 38.4px */
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section .section-inner-container .left .content h2 {
@@ -1750,6 +1772,10 @@ footer .footer-content .footer-links a {
 .component-who-we-are .section .section-inner-container .left .content p {
   margin: 0px;
   margin-bottom: 30px;
+}
+.component-who-we-are .section .section-inner-container .left .content sup {
+  position: absolute;
+  bottom: 7px;
 }
 .component-who-we-are .section .section-inner-container .right {
   width: 100%;
@@ -1835,6 +1861,9 @@ footer .footer-content .footer-links a {
 .component-who-we-are .section.section1 .right .content p, .component-who-we-are .section.section1 .right .content div {
   text-align: center;
 }
+.component-who-we-are .section.section1 .right .content .video {
+  margin: 30px;
+}
 .component-who-we-are .section.section2 .right .content {
   padding: 10px;
 }
@@ -1852,6 +1881,9 @@ footer .footer-content .footer-links a {
 }
 .component-who-we-are .section.section2 .right .chart svg {
   width: 100%;
+}
+.component-who-we-are .section.section2 .right .doctor-quote div {
+  margin-bottom: 0px;
 }
 @media screen and (min-width: 1200px) {
   .component-who-we-are .section.section2 .right .doctor-quote {
@@ -1884,6 +1916,17 @@ footer .footer-content .footer-links a {
 .component-who-we-are .section.section3 .component-timeline {
   margin-top: 50px;
   position: absolute;
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar {
+  height: 20px; /* Sets the thickness of the horizontal scrollbar */
+  background-color: #CCC4DF; /* Optional: styles the track */
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar-thumb {
+  background-color: #CCC4DF; /* Optional: styles the thumb */
+  border-radius: 6px;
+}
+.component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Optional: styles the track */
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section3 .component-timeline .timeline-container {
@@ -1924,6 +1967,17 @@ footer .footer-content .footer-links a {
   overflow-x: scroll;
   position: absolute;
   width: 100%;
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar {
+  height: 20px; /* Sets the thickness of the horizontal scrollbar */
+  background-color: #CCC4DF; /* Optional: styles the track */
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar-thumb {
+  background-color: #CCC4DF; /* Optional: styles the thumb */
+  border-radius: 6px;
+}
+.component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Optional: styles the track */
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section4 .right .content .team-members {
@@ -1970,9 +2024,11 @@ footer .footer-content .footer-links a {
 .component-who-we-are .component-footer .footer-inner-container {
   width: 90%;
   margin: auto;
-  font-style: italic;
-  opacity: 0.7;
+}
+.component-who-we-are .component-footer .footer-inner-container p {
+  color: #A495C3;
   text-align: left;
+  font-size: 16px;
 }
 
 #movieModalOverlay {

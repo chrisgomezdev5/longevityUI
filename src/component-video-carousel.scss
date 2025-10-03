@@ -4,24 +4,33 @@
 .component-video-carousel {
     position: relative;
     overflow: hidden;
-    max-height: 768px;
-    max-height: 860px;
+    min-height: 420px;
+    //max-height: 860px;
 
     &.tall {
         max-height: 900px;
     }
 
     @media screen and (min-width: $tab-breakpoint) {
-        height: 100vh;
+        min-height: 668px;
+        //height: 100vh;
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        min-height: 768px;
+        //height: 100vh;
     }
 
     video {
         height: -webkit-fill-available;
+        width: -webkit-fill-available;
         display: block;
 
         @media screen and (min-width: $desktop-breakpoint) {
-            height: auto;
             width: -webkit-fill-available;
+            height: auto;
+            //min-height: 860px;
+
         }
     }
 

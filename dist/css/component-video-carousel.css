@@ -1,25 +1,30 @@
 .component-video-carousel {
   position: relative;
   overflow: hidden;
-  max-height: 768px;
-  max-height: 860px;
+  min-height: 420px;
 }
 .component-video-carousel.tall {
   max-height: 900px;
 }
 @media screen and (min-width: 768px) {
   .component-video-carousel {
-    height: 100vh;
+    min-height: 668px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .component-video-carousel {
+    min-height: 768px;
   }
 }
 .component-video-carousel video {
   height: -webkit-fill-available;
+  width: -webkit-fill-available;
   display: block;
 }
 @media screen and (min-width: 1024px) {
   .component-video-carousel video {
-    height: auto;
     width: -webkit-fill-available;
+    height: auto;
   }
 }
 .component-video-carousel .video-overlay {

@@ -7,7 +7,7 @@ footer {
     background-size: cover;
 
     @media screen and (min-width: $tab-breakpoint) {
-        //height: 550px;
+        height: 473px;
     }
 
     .footer-overlay {
@@ -28,6 +28,10 @@ footer {
         flex-direction: column;
         height: 100%;
         justify-content: space-evenly;
+
+        @media screen and (min-width: $tab-breakpoint) {
+            height: 95%;
+        }
 
         h2 {
             color: $NM-Purple-prp-10;
@@ -82,8 +86,6 @@ footer {
                 color: $NM-Purple-prp-MAIN;
                 padding: 15px 30px;
                 font-weight: 700;
-                margin-top: 30px;
-                margin-bottom: 50px;
                 font-size: 20px;
                 text-decoration: none;
             }
