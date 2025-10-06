@@ -17,14 +17,14 @@
   }
 }
 .component-video-carousel video {
-  height: -webkit-fill-available;
+  height: unset;
   width: -webkit-fill-available;
   display: block;
 }
 @media screen and (min-width: 1024px) {
   .component-video-carousel video {
     width: -webkit-fill-available;
-    height: auto;
+    height: unset;
   }
 }
 .component-video-carousel .video-overlay {

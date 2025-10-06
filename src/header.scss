@@ -169,7 +169,7 @@ header {
                 position: absolute;
                 top: 0px;
                 left: 0px;
-                width: 248px;
+                width: 290px;
                 height: 378px;
                 border-radius: 0 8px 8px 0;
                 text-align: left;
@@ -178,22 +178,22 @@ header {
                     display: flex;
                     
                     .close-icon {
-                        width: 15%;
+                        width: 5%;
                         cursor: pointer;
                         padding-left: 30px;
-                        padding-top: 25px;
+                        padding-top: 35px;
                         svg {
 
                         }
                     }
 
                     .logo {
-                        width: 85%;
+                        width: 100%;
                         padding-left: 0px;
                         padding-top: 10px;
 
                         img {
-                            width: 150px;
+                            width: 100%;
                         }
 
                     }
@@ -221,7 +221,7 @@ header {
                         text-transform: capitalize;
                         margin-top: 10px;
                         margin-left: 30px;
-                        width: 150px;
+                        width: 173px;
                         height: 20px;
                         padding-top: 5px;
 

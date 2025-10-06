@@ -1,0 +1,196 @@
+header {
+  height: 83px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  position: absolute;
+}
+@media screen and (min-width: 1024px) {
+  header {
+    position: fixed;
+    height: 150px;
+  }
+}
+header nav.desktop {
+  width: 100%;
+  padding: 20px;
+  flex-shrink: 0;
+  background: #4E2A84;
+  display: none;
+  padding: 50px;
+}
+@media screen and (min-width: 1024px) {
+  header nav.desktop {
+    display: flex;
+  }
+}
+header nav.desktop.home {
+  background: linear-gradient(to bottom, #4E2A84, rgba(78, 42, 132, 0));
+}
+header nav.desktop .logo {
+  width: 23%;
+}
+header nav.desktop .logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+header nav.desktop .menu {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  min-width: 474px;
+  padding-top: 8px;
+}
+header nav.desktop .menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  header nav.desktop .menu a {
+    font-size: 20px;
+  }
+}
+header nav.desktop .menu a.button {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  color: #4E2A84;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+header nav.desktop .menu a:hover {
+  text-decoration: underline;
+}
+header nav.desktop .menu a.button:hover {
+  text-decoration: none;
+  background-color: #CCC4DF;
+  color: #4E2A84;
+}
+header nav.desktop .menu a:nth-child(4) {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  padding: 10px 20px;
+}
+@media screen and (min-width: 768px) {
+  header nav.desktop .menu a:nth-child(4) {
+    top: 50px;
+    left: unset;
+    right: 50px;
+    padding: 1rem 1.5rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  header nav.desktop .logo {
+    width: 33%;
+  }
+  header nav.desktop .menu {
+    width: 33%;
+  }
+}
+header nav.mobile {
+  height: 83px;
+  flex-shrink: 0;
+  background: #4E2A84;
+  display: flex;
+  padding: 20px;
+}
+header nav.mobile.home {
+  background: linear-gradient(to bottom, #4E2A84, rgba(78, 42, 132, 0));
+}
+@media screen and (min-width: 1024px) {
+  header nav.mobile {
+    display: none;
+  }
+}
+header nav.mobile .menu-icon {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 7px;
+}
+header nav.mobile .logo {
+  width: 60%;
+}
+header nav.mobile .logo img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+header nav.mobile .visit-icon {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+header nav.mobile .visit-icon svg:hover {
+  cursor: pointer;
+  fill: #CCC4DF;
+}
+header nav.mobile .mobile-menu {
+  display: none;
+  background-color: #4E2A84;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 248px;
+  height: 378px;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+header nav.mobile .mobile-menu .logo-container {
+  display: flex;
+}
+header nav.mobile .mobile-menu .logo-container .close-icon {
+  width: 15%;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-top: 25px;
+}
+header nav.mobile .mobile-menu .logo-container .logo {
+  width: 85%;
+  padding-left: 0px;
+  padding-top: 10px;
+}
+header nav.mobile .mobile-menu .logo-container .logo img {
+  width: 150px;
+}
+header nav.mobile .mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+header nav.mobile .mobile-menu a:hover {
+  text-decoration: underline;
+}
+header nav.mobile .mobile-menu a.button {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  color: #4E2A84;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+header nav.mobile .mobile-menu a.button:hover {
+  text-decoration: none;
+  background-color: #CCC4DF;
+  color: #4E2A84;
+}

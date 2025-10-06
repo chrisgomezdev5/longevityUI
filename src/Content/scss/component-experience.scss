@@ -1,0 +1,322 @@
+@import 'variables';
+
+.component-experience {
+    position: relative;
+
+    .timeline-container {
+        display: flex;
+        position: relative;
+        height: 800px;
+        background-color: #fff;
+        overflow: hidden;
+        overflow-x: scroll;
+
+        .parallelogram {
+            transform: skew(20deg); /* Skew angle */
+            border-right: 10px solid #fff;
+            border-left: 10px solid #fff;
+        }
+
+        .inset-text-cta {
+            border-radius: 29.475px;
+            background: rgba(255, 255, 255, 0.70);
+            box-shadow: 0 0.982px 98.25px 9.825px rgba(255, 255, 255, 0.20) inset;
+            z-index: 5;
+
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 250px;
+            height: 400px;
+            padding: 20px;
+
+            h2 {
+                font-size: 20px;
+                color: $NM-Purple-prp-MAIN;
+                font-weight: 400;
+                text-align: left;
+                text-transform: none;
+            }
+        }
+        .day {
+            position: absolute;
+            width: 450px; /* Adjust width */
+            height: 800px;    
+            overflow: hidden;
+        }
+
+        .day video {
+            width: auto;
+            position: absolute;
+            height: 100%;
+        }
+
+        .day1 {
+            width: 1150px; /* Adjust width */
+            z-index: 1;
+            left: 0px;
+        }
+
+        .day1 video {
+
+        }
+
+
+
+        .day2 {
+            z-index: 2;
+            width: 800px;
+            overflow: hidden;
+            left: 1000px;
+        }
+
+        .day2 video {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            left: -90px;
+        }
+
+        .day3 {
+            left: 1650px;
+            z-index: 1;
+            overflow: hidden;
+            width: 800px;
+        }
+
+        .day3 video {
+
+        }
+
+        .day4 {
+            display: block;
+            left: 2400px;
+            z-index: 2;
+            background: #fff;
+            width: 600px;
+        }
+
+        .day4 .event {
+            width: 100%;
+            height: 50%;
+            border: 10px solid #fff;
+            border-top: none;
+        }
+
+        .day4 .event1 {
+            position: relative;
+        }
+
+        .day4 .event2 {
+            position: relative;
+        }
+
+        .day4 .event1 video {
+            width: 700px;
+            height: auto;
+            position: relative;
+        }
+
+        .day4 .event2 video {
+            width: 700px;
+            height: auto;
+            position: relative;
+        }
+
+
+
+        .day5 {
+            width: 1400px; /* Adjust width */
+            z-index: 1;
+            left: 3010px;
+        }
+
+        .day5 video {
+
+        }
+
+
+        .day6 {
+            z-index: 2;
+            width: 600px;
+            overflow: hidden;
+            left: 4200px;
+
+        }
+
+        .day6 video {
+
+        }
+
+        .day7 {
+            left: 4700px;
+            z-index: 1;
+            overflow: hidden;
+            width: 800px;
+
+        }
+
+        .day7 video {
+
+        }
+
+        .day8 {
+            display: block;
+            left: 5500px;
+            z-index: 2;
+            background: #fff;
+            width: 600px;
+        }
+
+        .day8 .event {
+            width: 100%;
+            height: 50%;
+            border: 10px solid #fff;
+            border-top: none;
+        }
+
+        .day8 .event1 {
+            position: relative;
+        }
+
+        .day8 .event2 {
+            position: relative;
+        }
+
+        .day8 .event1 video {
+            width: 700px;
+            height: auto;
+            position: relative;
+        }
+
+        .day8 .event2 video {
+            width: 700px;
+            height: auto;
+            position: relative;
+        }
+
+
+        .day9 {
+            width: 1300px; /* Adjust width */
+            z-index: 1;
+            left: 6000px;
+
+        }
+
+        .day9 video {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            left: -50px;
+        }
+
+
+        .day10 {
+            z-index: 2;
+            width: 800px;
+            overflow: hidden;
+            left: 7150px;
+        }
+
+        .day10 video {
+            position: absolute;
+            left: -270px;
+        }
+
+        .day11 {
+            left: 7680px;
+            z-index: 1;
+            overflow: hidden;
+            width: 1000px;
+
+        }
+
+        .day11 video {
+
+            position: absolute;
+        }
+
+
+        .day12 {
+            width: 1200px; /* Adjust width */
+            z-index: 1;
+            left: 8690px;
+        }
+
+        .day12 video {
+            height: 100%;
+            width: auto;
+            position: absolute;
+            left: -190px;
+        }
+
+
+        .day13 {
+            z-index: 2;
+            width: 800px;
+            overflow: hidden;
+            left: 9700px;
+
+        }
+
+        .day13 video {
+            position: absolute;
+            left: -190px;
+            top: 0px;
+        }    
+
+    
+    }
+
+    .timeline-nav {
+        
+        padding: 1px;
+        align-items: anchor-center;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        bottom: 40px;
+        width: 300px;
+        height: 200px;
+        z-index: 5;
+        justify-content: space-around;
+        left: 50px;
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            display: inline-flex;
+            width: 900px;
+            height: 50px;
+            bottom: 100px;
+            left: 100px;
+            background: rgba(255, 255, 255, 0.40);
+        }
+
+        div {
+            color: #4E2A84;
+            padding: 8px;
+            padding-left: 30px;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                padding: unset;
+            }
+            &:hover {
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+    }  
+        
+    #day9 {
+
+        .inset-text-cta {
+            left: 100px;
+        }
+    }
+
+    #day11 {
+
+        .inset-text-cta {
+            left: 350px;
+        }
+    }
+}

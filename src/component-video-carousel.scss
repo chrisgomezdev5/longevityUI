@@ -22,15 +22,14 @@
     }
 
     video {
-        height: -webkit-fill-available;
+        height: unset;
         width: -webkit-fill-available;
         display: block;
 
         @media screen and (min-width: $desktop-breakpoint) {
             width: -webkit-fill-available;
-            height: auto;
+            height: unset;
             //min-height: 860px;
-
         }
     }
 

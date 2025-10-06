@@ -193,6 +193,31 @@
             }
         }
     }
+
+    &.basic {
+        margin: 0px;
+
+        div {
+            margin-bottom: 0px !important;
+        }      
+        
+        .timeline-title {
+            display: none;
+        }
+        
+        .timeline-nav {
+            top: 70vw;
+
+            .timeline-nav-items {
+                .timeline-nav-item {
+                    margin-bottom: 13px !important;
+                } 
+            }
+            .timeline-nav-bottom {
+
+            }
+        }
+    }
 }
 
 .component-timeline {
@@ -348,16 +373,30 @@
         }
     }
 
-    &.short {
+    &.basic {
+        .timeline-title {
+            display: none;
+        }
+        
         .timeline-container {
             height: 400px;
             width: 1000px;
 
+            .event {
+                .inset-text-cta {
+                    display: none;
+                }
+            }
             .days-span {
                 .day {
                     height: 400px;
                 }
             }
+
+
         }
+        .timeline-nav {
+            display: none;
+        }  
     }
 }

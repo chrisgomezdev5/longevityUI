@@ -1,0 +1,133 @@
+@import 'variables';
+
+footer {
+    position: relative;
+    background-image: url(/Areas/longevity/Content/img/bottompattern2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        height: 473px;
+    }
+
+    .footer-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to left, $NM-Purple-prp-MAIN, transparent);
+    }
+
+    .footer-content {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @media screen and (min-width: $tab-breakpoint) {
+        }
+
+        h2 {
+            color: var(--NM-Purple-prp-10, #E4E0EE);
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        p {
+            color: var(--White, #FFF);
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 160%;
+        }
+        .subtitle {
+            color: var(--White, #FFF);
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 160%;
+        }
+        .copyright {
+            color: var(--NM-Purple-prp-10, #E4E0EE);
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: 0.14px; 
+        }
+        .disclaimer p {
+            color: #A495C3;
+            font-family: "Open Sans";
+            font-size: 10px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 140%; /* 14px */
+            letter-spacing: 0.1px;
+            text-transform: none;
+            text-align: left;
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &.button {
+                background-color: #fff;
+                color: $NM-Purple-prp-MAIN;
+                padding: 15px 30px;
+                font-weight: 700;
+                font-size: 20px;
+                text-decoration: none;
+            }
+
+            &:hover {
+                text-decoration: underline;
+
+                &.button {
+                    text-decoration: none;
+                    background-color: $NM-Purple-prp-20;
+                    text-decoration: none; 
+                }
+            } 
+           
+        }
+
+        .footer-links {
+            width: 100%;
+            margin: auto;
+
+            @media screen and (min-width: $tab-breakpoint) {
+                display: flex;
+                justify-content: space-between;
+                width: 300px;
+            }
+
+            a {
+                color: var(--NM-Purple-prp-10, #E4E0EE);
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: 0.14px;
+            }
+        }
+    } 
+}

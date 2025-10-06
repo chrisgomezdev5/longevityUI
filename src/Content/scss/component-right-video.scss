@@ -1,0 +1,134 @@
+@import 'variables';
+
+.component-right-video {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    max-height: 1000px;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        //padding: 100px;
+        min-height: 900px;
+    }    
+
+    .title-text-container {
+        z-index: 2;
+        width: 100%;
+        margin: auto;
+        margin-top: 12vw;
+        padding: 20px;
+        max-width: 1300px;
+        position: relative;
+        @media screen and (min-width: $tab-breakpoint) {
+            //width: 1000px;
+        }         
+        .title-content {
+            margin-bottom: 50px;
+            @media screen and (min-width: $tab-breakpoint) {
+
+            }   
+
+            h2 {
+                color: var(--NM-Purple-prp-MAIN, #4E2A84);
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: 1.125em;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 110%;
+                letter-spacing: .75px;
+                text-transform: uppercase;      
+
+                @media screen and (min-width: $tab-breakpoint) {
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 24px; /* 80% */
+                    letter-spacing: 1.2px;
+                    text-transform: uppercase;
+                }
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    line-height: 160%;
+                }
+            }
+
+
+        }
+
+        .text-content {
+            width: 100%;
+            text-align: left;
+            font-weight: 400;
+            text-transform: none;
+            color: var(--Digital-Black, #262626);
+            font-family: "Open Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 160%; /* 32px */            
+            @media screen and (min-width: $tab-breakpoint) {
+                left: 200px;
+                position: absolute;
+                width: 500px;
+            } 
+            
+            ul, li {
+                list-style-type: none;
+            }
+
+            li {
+                position: relative;
+                margin-bottom: 30px;
+                &::before {
+                    content: '\f00c';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    left: -38px;
+                    top: 0px;
+                    color: var(--NM-Purple-prp-MAIN, #4E2A84);
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 26px;
+                    font-style: normal;
+                    font-weight: 900;
+                    line-height: 160%; /* 41.6px */
+                    letter-spacing: -0.13px;  
+                }
+            }
+
+            .button {
+                margin-top: 30px;
+            }
+        }        
+    }
+
+
+    .video-content {
+        position: absolute;
+        right: -200px;
+        top: 200px;
+        @media screen and (min-width: $desktop-breakpoint) {
+            right: -200px;
+            top: 50px;
+        }         
+        video {
+            width: 110%;
+            height: auto;
+            border-radius: 15px;
+        }
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        //background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0) 0%, #FFF 100%);
+        background: radial-gradient(35.63% 54.67% at 43% 54.48%, rgba(255, 255, 255, 0.5) 0%, #FFF 100%);
+    }
+}

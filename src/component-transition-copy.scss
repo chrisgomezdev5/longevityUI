@@ -12,6 +12,7 @@
     z-index: 1;
     display: hidden;
     justify-content: center;
+    
     @media screen and (min-width: $desktop-breakpoint) {
         display: flex;
     }
@@ -22,12 +23,21 @@
         display: flex;
     }
 
-    #intro-copy1 {
+    .inner-container {
+        width: 1000px;
+        height: 600px;
         position: absolute;
-        top: 20%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
-        color: $NM-Purple-prp-MAIN;
-        text-align: center;
+
+        #intro-copy1 {
+            position: absolute;
+            top: 20%;
+            text-align: center;
+            color: $NM-Purple-prp-MAIN;
+            width: 100%;
  
             h2 {
                 color: $NM-Purple-prp-MAIN;
@@ -41,51 +51,55 @@
                 letter-spacing: 1.2px;
                 text-transform: uppercase;                
             }        
-    }
+        }
 
-    #intro-copy2 {
-        position: absolute;
-        top: 27%;
-        text-align: center;
-        width: 100%;
-        max-width: 1300px;
-        font-size: 15px;
-
-        p {
-            color: #000;
+        #intro-copy2 {
+            position: absolute;
+            top: 37%;
             text-align: center;
+            width: 100%;
+            max-width: 1300px;
+            font-size: 15px;
 
-            /* H2 */
-            font-family: "Open Sans";
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 450;
-            line-height: 160%; /* 38.4px */           
+            p {
+                color: #000;
+                text-align: center;
+
+                /* H2 */
+                font-family: "Open Sans";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 450;
+                line-height: 160%; /* 38.4px */           
+            }
+            @media screen and (min-width: $tab-breakpoint) {
+                //font-size: 25px;
+            }
         }
-        @media screen and (min-width: $tab-breakpoint) {
-            //font-size: 25px;
+
+        .cta {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                //bottom: 10vw;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint-1440) {
+                //bottom: 10vw;
+            }
+
         }
     }
 
-    .cta {
-        position: absolute;
-        bottom: 5vw;
-        left: 50%;
-        transform: translateX(-50%);
 
-        @media screen and (min-width: $desktop-breakpoint) {
-            //bottom: 10vw;
-        }
 
-        @media screen and (min-width: $desktop-breakpoint-1440) {
-            bottom: 10vw;
-        }
-
-    }
 
     &.mobile {
         display: flex;
-        height: 400px;
+        height: 450px;
         
 
         @media screen and (min-width: $desktop-breakpoint) {
@@ -99,73 +113,78 @@
             }
         }
 
-        #intro-copy1b {
-            position: absolute;
-            top: 5%;
-            text-align: center;
-            color: $NM-Purple-prp-MAIN;
-            text-align: center;
-            padding: 10px;
-    
-                h2 {
-                    color: $NM-Purple-prp-MAIN;
-                    text-align: center;
-                    font-family: "Open Sans";
-                    font-size: 1.125em;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 110%;
-                    letter-spacing: .75px;
-                    text-transform: uppercase;
-                    
-                    @media screen and (min-width: $tab-breakpoint) {
-                        font-size: 20px;
+                    #intro-copy1b {
+                position: absolute;
+                top: 5%;
+                text-align: center;
+                color: $NM-Purple-prp-MAIN;
+                text-align: center;
+                padding: 10px;
+        
+                    h2 {
+                        color: $NM-Purple-prp-MAIN;
+                        text-align: center;
+                        font-family: "Open Sans";
+                        font-size: 1.125em;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: 24px; /* 80% */
-                        letter-spacing: 1.2px;
-                    }                    
-                }        
-        }
+                        line-height: 110%;
+                        letter-spacing: .75px;
+                        text-transform: uppercase;
+                        
+                        @media screen and (min-width: $tab-breakpoint) {
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 24px; /* 80% */
+                            letter-spacing: 1.2px;
+                        }                    
+                    }        
+            }
 
-        #intro-copy2b {
-            position: absolute;
-            top: 22%;
-            text-align: center;
-            width: 100%;
-            max-width: 1300px;
-            font-size: 15px;
-            
-
-            p {
-                color: #000;
+            #intro-copy2b {
+                position: absolute;
+                top: 22%;
                 text-align: center;
-                font-family: "Open Sans";
-                font-size: .875em;
-                font-style: normal;
-                font-weight: 450; 
-                line-height: 160%;        
+                width: 100%;
+                max-width: 1300px;
+                font-size: 15px;
+                
+
+                p {
+                    color: #000;
+                    text-align: center;
+                    font-family: "Open Sans";
+                    font-size: .875em;
+                    font-style: normal;
+                    font-weight: 450; 
+                    line-height: 160%;   
+                    padding-left: 20px;
+                    padding-right: 20px;     
+                }
+
+                img {
+                    width: 100px;
+                    height: auto;
+                }
             }
 
-            img {
-                width: 10vw;
-            }
-        }
+            .cta {
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: max-content;
 
-        .cta {
-            position: absolute;
-            bottom: 2vw;
-            left: 50%;
-            transform: translateX(-50%);
+                @media screen and (min-width: $desktop-breakpoint) {
+                    //bottom: 10vw;
+                }
 
-            @media screen and (min-width: $desktop-breakpoint) {
-                //bottom: 10vw;
-            }
+                @media screen and (min-width: $desktop-breakpoint-1440) {
+                    //bottom: 10vw;
+                }
 
-            @media screen and (min-width: $desktop-breakpoint-1440) {
-                bottom: 10vw;
             }
 
-        }
     }
 }

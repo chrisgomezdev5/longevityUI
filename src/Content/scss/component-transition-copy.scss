@@ -1,0 +1,175 @@
+
+@import 'variables';
+
+.component-transition-copy {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+    display: none;
+    margin-bottom: 50px;
+    z-index: 1;
+    display: hidden;
+    justify-content: center;
+    @media screen and (min-width: $desktop-breakpoint) {
+        display: flex;
+    }
+
+    svg {
+        width: 90%;
+        margin: auto;
+        display: flex;
+    }
+
+    #intro-copy1 {
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        color: $NM-Purple-prp-MAIN;
+        text-align: center;
+ 
+            h2 {
+                color: $NM-Purple-prp-MAIN;
+                text-align: center;
+                /* H3 */
+                font-family: "Open Sans";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 24px; /* 80% */
+                letter-spacing: 1.2px;
+                text-transform: uppercase;                
+            }        
+    }
+
+    #intro-copy2 {
+        position: absolute;
+        top: 27%;
+        text-align: center;
+        width: 100%;
+        max-width: 1300px;
+        font-size: 15px;
+
+        p {
+            color: #000;
+            text-align: center;
+
+            /* H2 */
+            font-family: "Open Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 160%; /* 38.4px */           
+        }
+        @media screen and (min-width: $tab-breakpoint) {
+            //font-size: 25px;
+        }
+    }
+
+    .cta {
+        position: absolute;
+        bottom: 5vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            //bottom: 10vw;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint-1440) {
+            bottom: 10vw;
+        }
+
+    }
+
+    &.mobile {
+        display: flex;
+        height: 450px;
+        
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            display: none;
+        }
+
+        img {
+            svg {
+                    height: 100%;
+                    width: -webkit-fill-available;
+            }
+        }
+
+        #intro-copy1b {
+            position: absolute;
+            top: 5%;
+            text-align: center;
+            color: $NM-Purple-prp-MAIN;
+            text-align: center;
+            padding: 10px;
+    
+                h2 {
+                    color: $NM-Purple-prp-MAIN;
+                    text-align: center;
+                    font-family: "Open Sans";
+                    font-size: 1.125em;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 110%;
+                    letter-spacing: .75px;
+                    text-transform: uppercase;
+                    
+                    @media screen and (min-width: $tab-breakpoint) {
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 24px; /* 80% */
+                        letter-spacing: 1.2px;
+                    }                    
+                }        
+        }
+
+        #intro-copy2b {
+            position: absolute;
+            top: 22%;
+            text-align: center;
+            width: 100%;
+            max-width: 1300px;
+            font-size: 15px;
+            
+
+            p {
+                color: #000;
+                text-align: center;
+                font-family: "Open Sans";
+                font-size: .875em;
+                font-style: normal;
+                font-weight: 450; 
+                line-height: 160%;   
+                padding-left: 20px;
+                padding-right: 20px;     
+            }
+
+            img {
+                width: 100px;
+                height: auto;
+            }
+        }
+
+        .cta {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                //bottom: 10vw;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint-1440) {
+                bottom: 10vw;
+            }
+
+        }
+    }
+}

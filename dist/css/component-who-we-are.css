@@ -20,7 +20,6 @@
   font-size: 20px;
 }
 .component-who-we-are .section {
-  border-left: 1px solid #4E2A84;
   padding-left: 10px;
 }
 @media screen and (min-width: 1024px) {
@@ -32,22 +31,10 @@
 .component-who-we-are .section .section-inner-container {
   width: 100%;
   height: 100%;
-  min-height: 90vh;
-}
-@media screen and (min-width: 390px) {
-  .component-who-we-are .section .section-inner-container {
-    min-height: 80vh;
-  }
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section .section-inner-container {
-    min-height: 50vh;
     display: flex;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .component-who-we-are .section .section-inner-container {
-    min-height: 80vh;
   }
 }
 .component-who-we-are .section .section-inner-container .left {
@@ -65,20 +52,29 @@
 }
 .component-who-we-are .section .section-inner-container .left .content {
   width: 100%;
+  text-align: left;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section .section-inner-container .left .content {
+    text-align: center;
+  }
 }
 .component-who-we-are .section .section-inner-container .left .content h2 {
   color: var(--NM-Purple-prp-MAIN, #4E2A84);
-  text-align: center;
+  text-align: left;
   font-family: "Open Sans";
   font-size: 24px;
   font-style: normal;
   font-weight: 450;
   line-height: 160%; /* 38.4px */
   position: relative;
+  white-space: normal;
+  width: 90vw;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section .section-inner-container .left .content h2 {
     text-align: right;
+    width: unset;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -103,7 +99,7 @@
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section .section-inner-container .right {
-    width: 50%;
+    width: 49%;
     border-left: 2px solid #4E2A84;
   }
 }
@@ -116,7 +112,7 @@
   text-align: left;
 }
 .component-who-we-are .section .section-inner-container .right .content div {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .component-who-we-are .section.hide-mobile .section-inner-container {
   min-height: auto;
@@ -136,7 +132,7 @@
 .component-who-we-are .section.section1 .component-title h2 {
   color: #4E2A84;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 30px;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section1 .component-title h2 {
@@ -162,7 +158,6 @@
 }
 .component-who-we-are .section.section1 .right .content {
   color: #000;
-  text-align: center;
   width: 100%;
   margin: auto;
 }
@@ -179,7 +174,12 @@
   width: 100%;
 }
 .component-who-we-are .section.section1 .right .content p, .component-who-we-are .section.section1 .right .content div {
-  text-align: center;
+  text-align: left;
+}
+@media screen and (min-width: 1024px) {
+  .component-who-we-are .section.section1 .right .content p, .component-who-we-are .section.section1 .right .content div {
+    text-align: center;
+  }
 }
 .component-who-we-are .section.section1 .right .content .video {
   margin: 30px;
@@ -235,7 +235,6 @@
 }
 .component-who-we-are .section.section3 .component-timeline {
   margin-top: 50px;
-  position: absolute;
 }
 .component-who-we-are .section.section3 .component-timeline ::-webkit-scrollbar {
   height: 20px; /* Sets the thickness of the horizontal scrollbar */
@@ -277,7 +276,6 @@
 }
 .component-who-we-are .section.section4 {
   position: relative;
-  margin-bottom: 80px;
 }
 .component-who-we-are .section.section4 .right .content {
   position: relative;
@@ -285,7 +283,6 @@
 .component-who-we-are .section.section4 .right .content .team-members {
   display: flex;
   overflow-x: scroll;
-  position: absolute;
   width: 100%;
 }
 .component-who-we-are .section.section4 .right .content .team-members::-webkit-scrollbar {
@@ -303,6 +300,9 @@
   .component-who-we-are .section.section4 .right .content .team-members {
     width: 46.5vw;
   }
+}
+.component-who-we-are .section.section4 .right .content .team-members .photo {
+  width: 181px;
 }
 .component-who-we-are .section.section4 .right .content .play-team-button {
   position: absolute;
@@ -328,7 +328,6 @@
 .component-who-we-are .section .team-members {
   display: flex;
   overflow-x: scroll;
-  position: absolute;
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
@@ -338,8 +337,16 @@
 }
 .component-who-we-are .section .team-members .member {
   margin-right: 5px;
-  height: 360px;
   overflow-y: clip;
+}
+.component-who-we-are .component-footer {
+  position: relative;
+  bottom: -10px;
+}
+@media screen and (min-width: 768px) {
+  .component-who-we-are .component-footer {
+    bottom: unset;
+  }
 }
 .component-who-we-are .component-footer .footer-inner-container {
   width: 90%;

@@ -141,7 +141,7 @@ header nav.mobile .mobile-menu {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 248px;
+  width: 290px;
   height: 378px;
   border-radius: 0 8px 8px 0;
   text-align: left;
@@ -150,18 +150,18 @@ header nav.mobile .mobile-menu .logo-container {
   display: flex;
 }
 header nav.mobile .mobile-menu .logo-container .close-icon {
-  width: 15%;
+  width: 5%;
   cursor: pointer;
   padding-left: 30px;
-  padding-top: 25px;
+  padding-top: 35px;
 }
 header nav.mobile .mobile-menu .logo-container .logo {
-  width: 85%;
+  width: 100%;
   padding-left: 0px;
   padding-top: 10px;
 }
 header nav.mobile .mobile-menu .logo-container .logo img {
-  width: 150px;
+  width: 100%;
 }
 header nav.mobile .mobile-menu a {
   display: block;
@@ -185,7 +185,7 @@ header nav.mobile .mobile-menu a.button {
   text-transform: capitalize;
   margin-top: 10px;
   margin-left: 30px;
-  width: 150px;
+  width: 173px;
   height: 20px;
   padding-top: 5px;
 }

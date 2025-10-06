@@ -1,0 +1,241 @@
+@import 'variables';
+
+header {
+    height: 83px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    position: absolute;
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        position: fixed;
+        height: 150px;
+    }
+
+    nav {
+
+        &.desktop {
+            width: 100%;
+            padding: 20px;
+            flex-shrink: 0;
+            background: #4E2A84;
+            display: none;
+            padding: 50px;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                display: flex;
+            }
+
+            &.home {
+                background: linear-gradient(to bottom, #4E2A84, #4E2A8400);
+            }
+
+            .logo {
+                width: 23%;
+
+                img {
+                    width: 100%;
+                    max-width: 200px;
+                    height: auto;
+                    display: block;
+                }
+            }    
+            
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                width: 33%;
+                min-width: 474px;
+                padding-top: 8px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                    font-size: 15px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    
+                    @media screen and (min-width: $tab-breakpoint) {
+                        font-size: 20px;
+                    }
+
+                    &.button {
+
+                        background-color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 1rem 1.5rem;
+                        color: #4E2A84;
+                        font-weight: bold;
+                        text-transform: capitalize;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &.button {
+                        &:hover {
+                            text-decoration: none;
+                            background-color: $NM-Purple-prp-20;
+                            color: $NM-Purple-prp-MAIN;
+                        }
+                    }
+                    &:nth-child(4) {
+                        position: absolute;
+                        top: 50px;
+                        left: 15px;
+                        padding: 10px 20px;
+
+                        @media screen and (min-width: $tab-breakpoint) {
+                            //position: relative;
+                            top: 50px;
+                            left: unset;
+                            right: 50px;
+                            padding: 1rem 1.5rem;
+                        }
+                        
+                    }
+
+
+                }
+                
+            }
+
+            @media screen and (min-width: 1400px) {
+            
+                .logo {
+                    width: 33%;
+                }
+
+                .menu {
+                    width: 33%;
+                }
+            }
+        }
+        
+        &.mobile {
+            height: 83px;
+            flex-shrink: 0;
+            background: #4E2A84;
+            display: flex;
+            padding: 20px;
+
+            &.home {
+                background: linear-gradient(to bottom, #4E2A84, #4E2A8400);
+            }
+            
+            
+            @media screen and (min-width: $desktop-breakpoint) {
+                display: none;
+            }
+
+            .menu-icon {
+                width: 20%;
+                display: flex;
+                justify-content: flex-start;
+                padding-top: 7px;
+            }
+
+            .logo {
+                width: 60%;
+
+                img {
+                    width: 100%;
+                    max-width: 200px;
+                    height: auto;
+                    display: block;
+                }
+            } 
+
+            .visit-icon {
+                width: 20%;
+                display: flex;
+                justify-content: flex-end;
+                svg {
+
+                    &:hover {
+                        cursor: pointer;
+                        fill: $NM-Purple-prp-20;
+                    }
+                }
+            }
+
+            .mobile-menu {
+                display: none;
+                background-color: $NM-Purple-prp-MAIN;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 248px;
+                height: 378px;
+                border-radius: 0 8px 8px 0;
+                text-align: left;
+
+                .logo-container {
+                    display: flex;
+                    
+                    .close-icon {
+                        width: 15%;
+                        cursor: pointer;
+                        padding-left: 30px;
+                        padding-top: 25px;
+                        svg {
+
+                        }
+                    }
+
+                    .logo {
+                        width: 85%;
+                        padding-left: 0px;
+                        padding-top: 10px;
+
+                        img {
+                            width: 150px;
+                        }
+
+                    }
+                }
+                a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    padding: 1rem 2rem;
+                    font-size: 20px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &.button {
+                        background-color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 1rem 1.5rem;
+                        color: #4E2A84;
+                        font-weight: bold;
+                        text-transform: capitalize;
+                        margin-top: 10px;
+                        margin-left: 30px;
+                        width: 150px;
+                        height: 20px;
+                        padding-top: 5px;
+
+                        &:hover {
+                            text-decoration: none;
+                            background-color: $NM-Purple-prp-20;
+                            color: $NM-Purple-prp-MAIN;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }    
+}
+

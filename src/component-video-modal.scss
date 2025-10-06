@@ -5,7 +5,16 @@ display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgb
 }
 
 #movieModal {
-background:#000;width:60vw;max-width:900px;height:60vh;max-height:80vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);padding:0;
+    background:#000;width:80vw;max-width:900px;height:60vh;max-height:80vh;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.18);padding:0;
+
+    @media screen and (min-width: $tab-breakpoint) {
+        width:60vw;      
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 530px;
+    }
 }
 
 #closeMovieModal {

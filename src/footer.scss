@@ -26,33 +26,31 @@ footer {
         padding: 20px;
         display: flex;
         flex-direction: column;
-        height: 100%;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        padding: 50px;
 
         @media screen and (min-width: $tab-breakpoint) {
-            height: 95%;
+            //height: 95%;
         }
 
         h2 {
-            color: $NM-Purple-prp-10;
+            color: var(--NM-Purple-prp-10, #E4E0EE);
             text-align: center;
             font-family: "Open Sans";
             font-size: 30px;
             font-style: normal;
             font-weight: 700;
-            line-height: 34px; /* 80% */
+            line-height: 160%;
             letter-spacing: 1.2px;
             text-transform: uppercase;
         }
         p {
-            color: var(--NM-Purple-prp-10, #E4E0EE);
-            text-align: center;
+            color: var(--White, #FFF);
             font-family: "Open Sans";
-            font-size: 14px;
+            font-size: 24px;
             font-style: normal;
-            font-weight: 300;
-            line-height: 20px; /* 142.857% */
-            letter-spacing: 0.14px;
+            font-weight: 450;
+            line-height: 160%;
         }
         .subtitle {
             color: var(--White, #FFF);
@@ -61,6 +59,16 @@ footer {
             font-style: normal;
             font-weight: 450;
             line-height: 160%;
+        }
+        .copyright {
+            color: var(--NM-Purple-prp-10, #E4E0EE);
+            text-align: center;
+            font-family: "Open Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: 0.14px; 
         }
         .disclaimer p {
             color: #A495C3;
@@ -88,6 +96,7 @@ footer {
                 font-weight: 700;
                 font-size: 20px;
                 text-decoration: none;
+                margin-bottom: 50px;
             }
 
             &:hover {

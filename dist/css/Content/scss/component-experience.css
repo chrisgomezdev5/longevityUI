@@ -1,0 +1,239 @@
+.component-experience {
+  position: relative;
+}
+.component-experience .timeline-container {
+  display: flex;
+  position: relative;
+  height: 800px;
+  background-color: #fff;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.component-experience .timeline-container .parallelogram {
+  transform: skew(20deg); /* Skew angle */
+  border-right: 10px solid #fff;
+  border-left: 10px solid #fff;
+}
+.component-experience .timeline-container .inset-text-cta {
+  border-radius: 29.475px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0.982px 98.25px 9.825px rgba(255, 255, 255, 0.2) inset;
+  z-index: 5;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 250px;
+  height: 400px;
+  padding: 20px;
+}
+.component-experience .timeline-container .inset-text-cta h2 {
+  font-size: 20px;
+  color: #4E2A84;
+  font-weight: 400;
+  text-align: left;
+  text-transform: none;
+}
+.component-experience .timeline-container .day {
+  position: absolute;
+  width: 450px; /* Adjust width */
+  height: 800px;
+  overflow: hidden;
+}
+.component-experience .timeline-container .day video {
+  width: auto;
+  position: absolute;
+  height: 100%;
+}
+.component-experience .timeline-container .day1 {
+  width: 1150px; /* Adjust width */
+  z-index: 1;
+  left: 0px;
+}
+.component-experience .timeline-container .day2 {
+  z-index: 2;
+  width: 800px;
+  overflow: hidden;
+  left: 1000px;
+}
+.component-experience .timeline-container .day2 video {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: -90px;
+}
+.component-experience .timeline-container .day3 {
+  left: 1650px;
+  z-index: 1;
+  overflow: hidden;
+  width: 800px;
+}
+.component-experience .timeline-container .day4 {
+  display: block;
+  left: 2400px;
+  z-index: 2;
+  background: #fff;
+  width: 600px;
+}
+.component-experience .timeline-container .day4 .event {
+  width: 100%;
+  height: 50%;
+  border: 10px solid #fff;
+  border-top: none;
+}
+.component-experience .timeline-container .day4 .event1 {
+  position: relative;
+}
+.component-experience .timeline-container .day4 .event2 {
+  position: relative;
+}
+.component-experience .timeline-container .day4 .event1 video {
+  width: 700px;
+  height: auto;
+  position: relative;
+}
+.component-experience .timeline-container .day4 .event2 video {
+  width: 700px;
+  height: auto;
+  position: relative;
+}
+.component-experience .timeline-container .day5 {
+  width: 1400px; /* Adjust width */
+  z-index: 1;
+  left: 3010px;
+}
+.component-experience .timeline-container .day6 {
+  z-index: 2;
+  width: 600px;
+  overflow: hidden;
+  left: 4200px;
+}
+.component-experience .timeline-container .day7 {
+  left: 4700px;
+  z-index: 1;
+  overflow: hidden;
+  width: 800px;
+}
+.component-experience .timeline-container .day8 {
+  display: block;
+  left: 5500px;
+  z-index: 2;
+  background: #fff;
+  width: 600px;
+}
+.component-experience .timeline-container .day8 .event {
+  width: 100%;
+  height: 50%;
+  border: 10px solid #fff;
+  border-top: none;
+}
+.component-experience .timeline-container .day8 .event1 {
+  position: relative;
+}
+.component-experience .timeline-container .day8 .event2 {
+  position: relative;
+}
+.component-experience .timeline-container .day8 .event1 video {
+  width: 700px;
+  height: auto;
+  position: relative;
+}
+.component-experience .timeline-container .day8 .event2 video {
+  width: 700px;
+  height: auto;
+  position: relative;
+}
+.component-experience .timeline-container .day9 {
+  width: 1300px; /* Adjust width */
+  z-index: 1;
+  left: 6000px;
+}
+.component-experience .timeline-container .day9 video {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: -50px;
+}
+.component-experience .timeline-container .day10 {
+  z-index: 2;
+  width: 800px;
+  overflow: hidden;
+  left: 7150px;
+}
+.component-experience .timeline-container .day10 video {
+  position: absolute;
+  left: -270px;
+}
+.component-experience .timeline-container .day11 {
+  left: 7680px;
+  z-index: 1;
+  overflow: hidden;
+  width: 1000px;
+}
+.component-experience .timeline-container .day11 video {
+  position: absolute;
+}
+.component-experience .timeline-container .day12 {
+  width: 1200px; /* Adjust width */
+  z-index: 1;
+  left: 8690px;
+}
+.component-experience .timeline-container .day12 video {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: -190px;
+}
+.component-experience .timeline-container .day13 {
+  z-index: 2;
+  width: 800px;
+  overflow: hidden;
+  left: 9700px;
+}
+.component-experience .timeline-container .day13 video {
+  position: absolute;
+  left: -190px;
+  top: 0px;
+}
+.component-experience .timeline-nav {
+  padding: 1px;
+  align-items: anchor-center;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  bottom: 40px;
+  width: 300px;
+  height: 200px;
+  z-index: 5;
+  justify-content: space-around;
+  left: 50px;
+}
+@media screen and (min-width: 1024px) {
+  .component-experience .timeline-nav {
+    display: inline-flex;
+    width: 900px;
+    height: 50px;
+    bottom: 100px;
+    left: 100px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+.component-experience .timeline-nav div {
+  color: #4E2A84;
+  padding: 8px;
+  padding-left: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .component-experience .timeline-nav div {
+    padding: unset;
+  }
+}
+.component-experience .timeline-nav div:hover {
+  cursor: pointer;
+  color: #fff;
+}
+.component-experience #day9 .inset-text-cta {
+  left: 100px;
+}
+.component-experience #day11 .inset-text-cta {
+  left: 350px;
+}

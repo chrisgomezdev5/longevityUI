@@ -22,7 +22,6 @@
     }
 
     .section {
-        border-left: 1px solid #4E2A84;
         padding-left: 10px;
 
         @media screen and (min-width: $desktop-breakpoint)  {
@@ -34,19 +33,19 @@
         .section-inner-container {
             width: 100%;
             height: 100%;
-            min-height: 90vh;
+            //min-height: 90vh;
 
             @media screen and (min-width: 390px) {
-                min-height: 80vh;
+                //min-height: 80vh;
             }
 
             @media screen and (min-width: $desktop-breakpoint) {
-                min-height: 50vh;
+                //min-height: 50vh;
                 display: flex;
             }
 
-            @media screen and (min-width: $desktop-breakpoint) {
-                min-height: 80vh;
+            @media screen and (min-width: $desktop-breakpoint-1025) {
+                //min-height: 80vh;
             }
 
             .left {
@@ -65,19 +64,26 @@
 
                 .content {
                     width: 100%;
+                    text-align: left;
 
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        text-align: center;
+                    }
                     h2 {
                         color: var(--NM-Purple-prp-MAIN, #4E2A84);
-                        text-align: center;
+                        text-align: left;
                         font-family: "Open Sans";
                         font-size: 24px;
                         font-style: normal;
                         font-weight: 450;
                         line-height: 160%; /* 38.4px */  
                         position: relative; 
+                        white-space: normal;
+                        width: 90vw;
                         
                         @media screen and (min-width: $desktop-breakpoint) {
                             text-align: right;
+                            width: unset;
                         }
                     }
                     @media screen and (min-width: $desktop-breakpoint) {
@@ -105,7 +111,7 @@
 
 
                 @media screen and (min-width: $desktop-breakpoint) {
-                    width: 50%;
+                    width: 49%;
                     border-left: 2px solid $NM-Purple-prp-MAIN;
                 }
 
@@ -120,7 +126,7 @@
                     }
 
                     div {
-                        margin-bottom: 50px;
+                        margin-bottom: 30px;
                     }
                 }
             }
@@ -148,7 +154,7 @@
                 h2 {
                     color: $NM-Purple-prp-MAIN;
                     font-weight: 700;
-                    font-size: 32px;
+                    font-size: 30px;
 
                     @media screen and (min-width: $desktop-breakpoint) {
                         position: relative;
@@ -178,7 +184,6 @@
             .right {
                 .content {
                     color: #000;
-                    text-align: center;
                     width: 100%;
                     margin: auto;
 
@@ -196,7 +201,11 @@
                     }
 
                     p, div {
-                        text-align: center;
+                        text-align: left;
+
+                        @media screen and (min-width: $desktop-breakpoint) {
+                            text-align: center;
+                        }
                     }
 
                     .video {
@@ -281,7 +290,6 @@
 
             .component-timeline {
                 margin-top: 50px;
-                position: absolute;
 
                 ::-webkit-scrollbar {
                     height: 20px; /* Sets the thickness of the horizontal scrollbar */
@@ -334,7 +342,7 @@
 
         &.section4 {
             position: relative;
-            margin-bottom: 80px;
+
             .right {
 
                 .content {
@@ -343,7 +351,6 @@
                     .team-members {
                         display: flex;
                         overflow-x: scroll;
-                        position: absolute;
                         width: 100%;
 
                         &::-webkit-scrollbar {
@@ -365,7 +372,7 @@
                         }
 
                         .photo {
-                            //height: 370px;
+                            width: 181px;
                         }
                     }
 
@@ -400,7 +407,6 @@
         .team-members {
             display: flex;
             overflow-x: scroll;
-            position: absolute;
             width: 100%;
 
             @media screen and (min-width: $desktop-breakpoint) {
@@ -409,13 +415,20 @@
 
             .member {
                 margin-right: 5px;
-                height: 360px;
+                
                 overflow-y: clip;
             }
         }        
     }
 
     .component-footer {
+        position: relative;
+        bottom: -10px;
+
+        @media screen and (min-width: $tab-breakpoint) {
+            bottom: unset;
+        }
+
         .footer-inner-container {
                 width: 90%;
                 margin: auto;

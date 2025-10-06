@@ -1,0 +1,250 @@
+.component-flipping-cards {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+.component-flipping-cards .cards-container {
+  display: flex;
+  width: 250px;
+  max-width: 2000px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  justify-content: center;
+  gap: 0.5vw;
+}
+@media screen and (min-width: 768px) {
+  .component-flipping-cards .cards-container {
+    width: 100%;
+  }
+}
+.component-flipping-cards .cards-container .flip-card {
+  height: 450px;
+  width: 300px;
+  perspective: 1000px;
+  margin: 1vw 0;
+  flex: none;
+}
+@media screen and (min-width: 768px) {
+  .component-flipping-cards .cards-container .flip-card {
+    height: 450px;
+    width: 300px;
+    margin: 1vw 0;
+    flex: none;
+  }
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+@media (max-width: 1200px) {
+  .component-flipping-cards .cards-container .flip-card .flip-card-inner .flipping-cards {
+    gap: 1vw;
+    max-width: 900px;
+  }
+}
+@media (max-width: 800px) {
+  .component-flipping-cards .cards-container .flip-card .flip-card-inner .flipping-cards {
+    gap: 2vw;
+    max-width: 100vw;
+    padding: 0 2vw;
+  }
+  .component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card {
+    min-width: 140px;
+    max-width: 180px;
+    height: 200px;
+  }
+}
+@media (max-width: 500px) {
+  .component-flipping-cards .cards-container .flip-card .flip-card-inner .flipping-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
+  }
+  .component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card {
+    width: 90vw;
+    min-width: unset;
+    max-width: 95vw;
+    height: 160px;
+  }
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-front, .component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-front {
+  background-size: cover;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-front .front-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(78, 42, 132, 0) 0%, rgba(78, 42, 132, 0.5) 100%);
+  border-radius: 20px;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-front .title {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  width: 200px;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-front .title h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 35.2px */
+  width: 100%;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back {
+  transform: rotateY(180deg);
+  background: #E4E0EE;
+  color: #482476;
+  text-align: left;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back .back-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back .back-content h2 {
+  color: var(--NM-Purple-prp-110, #482476);
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px; /* 125% */
+  text-align: left;
+  margin: 0px;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back .back-content .middle-text {
+  color: var(--NM-Purple-prp-110, #482476);
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  letter-spacing: 0.18px;
+  text-align: left;
+  padding-top: 30px;
+}
+.component-flipping-cards .cards-container .flip-card .flip-card-inner .flip-card-back .back-content .bottom-text {
+  padding-right: 20px;
+  color: var(--NM-Purple-prp-110, #482476);
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px; /* 137.5% */
+  letter-spacing: 0.16px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.component-flipping-cards .cards-container .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta .flip-card-front a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta .flip-card-front a .title {
+  position: unset;
+  transform: none;
+  display: block;
+  z-index: 2;
+  padding: 30px;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta .flip-card-front a .title h2 {
+  color: #FFF;
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px; /* 125% */
+}
+.component-flipping-cards .cards-container .flip-card.is-cta .flip-card-front a .description {
+  color: #FFF;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0.16px;
+  z-index: 2;
+  text-align: left;
+  padding: 30px;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta .flip-card-front a .front-content-overlay {
+  background: #4E2A84;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta:hover .flip-card-inner {
+  transform: none;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta:hover .flip-card-front a .title h2 {
+  color: #4E2A84;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta:hover .flip-card-front a .description {
+  color: #4E2A84;
+}
+.component-flipping-cards .cards-container .flip-card.is-cta:hover .flip-card-front a .front-content-overlay {
+  background: #CCC4DF;
+}
+.component-flipping-cards .slides-nav {
+  position: absolute;
+  bottom: -50px;
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 2;
+  max-width: 1400px;
+  margin: auto;
+}
+.component-flipping-cards .slides-nav .prev-button, .component-flipping-cards .slides-nav .next-button {
+  width: 40px;
+  height: 40px;
+  pointer-events: all;
+}
+@media screen and (min-width: 768px) {
+  .component-flipping-cards .slides-nav .prev-button, .component-flipping-cards .slides-nav .next-button {
+    background-size: contain;
+  }
+}
+.component-flipping-cards .slides-nav .prev-button svg path, .component-flipping-cards .slides-nav .next-button svg path {
+  fill: #4E2A84;
+}
+.component-flipping-cards .slides-nav .prev-button svg:hover, .component-flipping-cards .slides-nav .next-button svg:hover {
+  cursor: pointer;
+}
+.component-flipping-cards .slides-nav .prev-button svg:hover path, .component-flipping-cards .slides-nav .next-button svg:hover path {
+  fill: #B6ACD1;
+}
+.component-flipping-cards .slides-nav .prev-button svg {
+  transform: rotate(180deg);
+}
+.component-flipping-cards .slides-nav .next-button {
+  margin-right: 10px;
+}
