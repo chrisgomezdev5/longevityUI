@@ -223,7 +223,9 @@ footer .footer-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 footer .footer-content h2 {
   color: var(--NM-Purple-prp-10, #E4E0EE);
@@ -421,14 +423,16 @@ footer .footer-content .footer-links a {
   }
 }
 .component-video-carousel video {
-  height: unset;
+  height: -webkit-fill-available;
   width: -webkit-fill-available;
+  max-height: 440px;
   display: block;
 }
 @media screen and (min-width: 1024px) {
   .component-video-carousel video {
     width: -webkit-fill-available;
-    height: unset;
+    height: auto;
+    max-height: unset;
   }
 }
 .component-video-carousel .video-overlay {
@@ -519,6 +523,8 @@ footer .footer-content .footer-links a {
   font-weight: 400;
   line-height: 170%;
   text-transform: none;
+  width: 100%;
+  max-width: 1000px;
 }
 @media screen and (min-width: 768px) {
   .component-video-carousel .video-overlay .copy .description {
@@ -700,17 +706,21 @@ footer .footer-content .footer-links a {
 }
 .component-flipping-cards .cards-container {
   display: flex;
-  width: 250px;
   max-width: 2000px;
   height: auto;
   margin: 0 auto;
   overflow: visible;
-  justify-content: center;
+  justify-content: start;
   gap: 0.5vw;
 }
 @media screen and (min-width: 768px) {
   .component-flipping-cards .cards-container {
     width: 100%;
+  }
+}
+@media screen and (min-width: 1550px) {
+  .component-flipping-cards .cards-container {
+    justify-content: center;
   }
 }
 .component-flipping-cards .cards-container .flip-card {
@@ -993,14 +1003,13 @@ footer .footer-content .footer-links a {
 .component-right-video .title-text-container .text-content {
   width: 100%;
   text-align: left;
-  font-weight: 400;
   text-transform: none;
-  color: var(--Digital-Black, #262626);
+  color: #000;
   font-family: "Open Sans";
   font-size: 20px;
-  font-style: normal;
+  font-style: 400;
   font-weight: 450;
-  line-height: 160%; /* 32px */
+  line-height: 160%;
 }
 @media screen and (min-width: 768px) {
   .component-right-video .title-text-container .text-content {
@@ -1022,34 +1031,41 @@ footer .footer-content .footer-links a {
   width: 10px;
   height: 10px;
   position: absolute;
-  left: -38px;
+  left: -28px;
   top: 0px;
   color: var(--NM-Purple-prp-MAIN, #4E2A84);
   font-family: "Font Awesome 5 Free";
-  font-size: 26px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 900;
   line-height: 160%; /* 41.6px */
   letter-spacing: -0.13px;
+}
+@media screen and (min-width: 768px) {
+  .component-right-video .title-text-container .text-content li::before {
+    left: -38px;
+    font-size: 26px;
+  }
 }
 .component-right-video .title-text-container .text-content .button {
   margin-top: 30px;
 }
 .component-right-video .video-content {
   position: absolute;
-  right: -200px;
+  right: -130px;
   top: 200px;
 }
 @media screen and (min-width: 1024px) {
   .component-right-video .video-content {
-    right: -200px;
-    top: 50px;
+    right: -50px;
+    top: 30px;
   }
 }
 .component-right-video .video-content video {
-  width: 110%;
+  width: 130%;
   height: auto;
   border-radius: 15px;
+  max-width: 2000px;
 }
 .component-right-video .video-overlay {
   position: absolute;
@@ -1058,7 +1074,7 @@ footer .footer-content .footer-links a {
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  background: radial-gradient(35.63% 54.67% at 43% 54.48%, rgba(255, 255, 255, 0.5) 0%, #FFF 100%);
+  background: radial-gradient(35.63% 54.67% at 43% 54.48%, rgba(255, 255, 255, 0.3) 0%, #FFF 100%);
 }
 
 .component-timeline-mobile {
@@ -1240,6 +1256,10 @@ footer .footer-content .footer-links a {
 .component-timeline-mobile.basic .timeline-nav .timeline-nav-items .timeline-nav-item {
   margin-bottom: 13px !important;
 }
+.component-timeline-mobile.basic .timeline-info-container {
+  display: none;
+}
+
 .component-timeline {
   position: relative;
   display: none;
@@ -1379,6 +1399,7 @@ footer .footer-content .footer-links a {
 }
 .component-timeline .timeline-nav .timeline-nav-item.active {
   border-bottom: 1px solid var(--NM-Purple-prp-MAIN, #4E2A84);
+  font-weight: 900;
 }
 .component-timeline.basic .timeline-title {
   display: none;
@@ -1710,15 +1731,16 @@ footer .footer-content .footer-links a {
   position: relative;
   overflow: hidden;
   font-size: 20px;
-  padding: 10px;
+  margin: 10px;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are {
     padding: 0px;
+    margin: unset;
   }
 }
 .component-who-we-are .cta {
-  padding: 10px 40px;
+  padding: 10px 30px;
   background-color: #4E2A84;
   color: #fff;
   border-radius: 5px;
@@ -1838,8 +1860,14 @@ footer .footer-content .footer-links a {
 }
 .component-who-we-are .section.section1 .component-title h2 {
   color: #4E2A84;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 1.125em;
+  font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  line-height: 110%;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section1 .component-title h2 {
@@ -1889,7 +1917,7 @@ footer .footer-content .footer-links a {
   }
 }
 .component-who-we-are .section.section1 .right .content .video {
-  margin: 30px;
+  margin: 30px img;
 }
 .component-who-we-are .section.section2 .right .content {
   padding: 10px;
@@ -2070,7 +2098,7 @@ footer .footer-content .footer-links a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: -webkit-fill-available;
   height: 100vh;
   background: rgba(0, 0, 0, 0.7);
   z-index: 2000;
@@ -2082,7 +2110,7 @@ footer .footer-content .footer-links a {
   background: #000;
   width: 80vw;
   max-width: 900px;
-  height: 60vh;
+  height: 80vh;
   max-height: 80vh;
   position: relative;
   display: flex;
@@ -2091,16 +2119,12 @@ footer .footer-content .footer-links a {
   align-items: center;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  padding: 0;
+  padding: 10px;
 }
-@media screen and (min-width: 768px) {
-  #movieModal {
-    width: 60vw;
-  }
-}
+
 #movieModal iframe {
   width: 100%;
-  max-width: 530px;
+  height: 80%;
 }
 
 #closeMovieModal {

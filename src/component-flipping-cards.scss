@@ -10,17 +10,22 @@
     .cards-container {
         display: flex;
         //flex-wrap: wrap;
-        width: 250px;
+        //width: 250px;
         max-width: 2000px;
         height: auto;
         margin: 0 auto;
         overflow: visible;
-        justify-content: center;
+        justify-content: start;
         gap: .5vw;
 
         @media screen and (min-width: $tab-breakpoint) {
             width: 100%;
         }
+
+        @media screen and (min-width: 1550px) {
+            justify-content: center;
+        }
+
         // Only show up to 5 cards
         > .flip-card:nth-child(n+6) {
             //display: none;

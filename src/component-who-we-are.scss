@@ -5,14 +5,14 @@
     position: relative;
     overflow: hidden;
     font-size: 20px;
-    padding: 10px;
-
+    margin: 10px;
     @media screen and (min-width: $desktop-breakpoint) {
         padding: 0px;
+        margin: unset;
     }
 
     .cta {
-        padding: 10px 40px;
+        padding: 10px 30px;
         background-color: $NM-Purple-prp-MAIN;
         color: #fff;
         border-radius: 5px;
@@ -153,8 +153,14 @@
 
                 h2 {
                     color: $NM-Purple-prp-MAIN;
+                    text-align: center;
+                    font-family: "Open Sans";
+                    font-size: 1.125em;
+                    font-style: normal;
                     font-weight: 700;
-                    font-size: 30px;
+                    line-height: 110%;
+                    letter-spacing: .75px;
+                    text-transform: uppercase;
 
                     @media screen and (min-width: $desktop-breakpoint) {
                         position: relative;
@@ -210,6 +216,10 @@
 
                     .video {
                         margin: 30px
+
+                        img {
+
+                        }
                     }
                 }
             }

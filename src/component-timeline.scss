@@ -89,6 +89,7 @@
                 &.active {
                     span {
                         border-bottom: 1px solid var(--NM-Purple-prp-MAIN, #4E2A84);
+                        
                     }
                 }
             }
@@ -216,6 +217,10 @@
             .timeline-nav-bottom {
 
             }
+        }
+
+        .timeline-info-container {
+            display: none;
         }
     }
 }
@@ -369,6 +374,7 @@
 
             &.active {
                border-bottom: 1px solid var(--NM-Purple-prp-MAIN, #4E2A84); 
+               font-weight: 900;
             }
         }
     }

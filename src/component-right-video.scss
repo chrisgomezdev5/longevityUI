@@ -59,14 +59,14 @@
         .text-content {
             width: 100%;
             text-align: left;
-            font-weight: 400;
             text-transform: none;
-            color: var(--Digital-Black, #262626);
+            color: #000;
             font-family: "Open Sans";
             font-size: 20px;
-            font-style: normal;
+            font-style: 400;
             font-weight: 450;
-            line-height: 160%; /* 32px */            
+            line-height: 160%;            
+
             @media screen and (min-width: $tab-breakpoint) {
                 left: 200px;
                 position: absolute;
@@ -86,15 +86,20 @@
                     width: 10px;
                     height: 10px;
                     position: absolute;
-                    left: -38px;
+                    left: -28px;
                     top: 0px;
                     color: var(--NM-Purple-prp-MAIN, #4E2A84);
                     font-family: "Font Awesome 5 Free";
-                    font-size: 26px;
+                    font-size: 20px;
                     font-style: normal;
                     font-weight: 900;
                     line-height: 160%; /* 41.6px */
                     letter-spacing: -0.13px;  
+
+                    @media screen and (min-width: $tab-breakpoint) {
+                        left: -38px;
+                        font-size: 26px;
+                    }
                 }
             }
 
@@ -107,16 +112,17 @@
 
     .video-content {
         position: absolute;
-        right: -200px;
+        right: -130px;
         top: 200px;
         @media screen and (min-width: $desktop-breakpoint) {
-            right: -200px;
-            top: 50px;
+            right: -50px;
+            top: 30px;
         }         
         video {
-            width: 110%;
+            width: 130%;
             height: auto;
             border-radius: 15px;
+            max-width: 2000px;
         }
     }
 
@@ -128,6 +134,6 @@
         height: 100%;
         border-radius: 15px;
         //background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0) 0%, #FFF 100%);
-        background: radial-gradient(35.63% 54.67% at 43% 54.48%, rgba(255, 255, 255, 0.5) 0%, #FFF 100%);
+        background: radial-gradient(35.63% 54.67% at 43% 54.48%, rgba(255, 255, 255, 0.3) 0%, #FFF 100%);
     }
 }

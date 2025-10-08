@@ -3,15 +3,16 @@
   position: relative;
   overflow: hidden;
   font-size: 20px;
-  padding: 10px;
+  margin: 10px;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are {
     padding: 0px;
+    margin: unset;
   }
 }
 .component-who-we-are .cta {
-  padding: 10px 40px;
+  padding: 10px 30px;
   background-color: #4E2A84;
   color: #fff;
   border-radius: 5px;
@@ -131,8 +132,14 @@
 }
 .component-who-we-are .section.section1 .component-title h2 {
   color: #4E2A84;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 1.125em;
+  font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  line-height: 110%;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 1024px) {
   .component-who-we-are .section.section1 .component-title h2 {
@@ -182,7 +189,7 @@
   }
 }
 .component-who-we-are .section.section1 .right .content .video {
-  margin: 30px;
+  margin: 30px img;
 }
 .component-who-we-are .section.section2 .right .content {
   padding: 10px;

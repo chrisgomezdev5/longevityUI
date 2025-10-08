@@ -517,6 +517,8 @@ footer .footer-content .footer-links a {
   font-weight: 400;
   line-height: 170%;
   text-transform: none;
+  width: 100%;
+  max-width: 1000px;
 }
 @media screen and (min-width: 768px) {
   .component-video-carousel .video-overlay .copy .description {
@@ -2091,7 +2093,7 @@ footer .footer-content .footer-links a {
   background: #000;
   width: 60vw;
   max-width: 900px;
-  height: 60vh;
+  height: 80vh;
   max-height: 80vh;
   position: relative;
   display: flex;
@@ -2100,7 +2102,7 @@ footer .footer-content .footer-links a {
   align-items: center;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  padding: 0;
+  padding: 10px;
 }
 
 #closeMovieModal {

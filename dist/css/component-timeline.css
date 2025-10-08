@@ -177,6 +177,10 @@
 .component-timeline-mobile.basic .timeline-nav .timeline-nav-items .timeline-nav-item {
   margin-bottom: 13px !important;
 }
+.component-timeline-mobile.basic .timeline-info-container {
+  display: none;
+}
+
 .component-timeline {
   position: relative;
   display: none;
@@ -316,6 +320,7 @@
 }
 .component-timeline .timeline-nav .timeline-nav-item.active {
   border-bottom: 1px solid var(--NM-Purple-prp-MAIN, #4E2A84);
+  font-weight: 900;
 }
 .component-timeline.basic .timeline-title {
   display: none;

@@ -98,36 +98,43 @@ gsap.from("#svg3", {
     }
 });
 
-// Timeline for #svg4 and #intro-copy1
-let tlSvg4Intro = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".component-transition-copy",
-        start: "top 40%",
-        toggleActions: "play none none none"
-    }
-});
-tlSvg4Intro.from("#svg4", {
+gsap.from("#svg4", {
     x: 300,
     y: 300,
     opacity: 0,
     duration: 1.2,
     ease: "power2.out",
+    visibility: "visible",
+    scrollTrigger: {
+        trigger: ".component-transition-copy",
+        start: "top 40%",
+        toggleActions: "play none none none"
+    }    
+})
+
+// Timeline for #svg4 and #intro-copy1
+let tlSvg4Intro = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".component-transition-copy",
+        start: "top 70%",
+        toggleActions: "play none none none"
+    }
+});
+
+tlSvg4Intro.from("#intro-copy1", {
+    y: 50,
+    opacity: 0,
+    duration: .5,
+    ease: "power2.out",
     visibility: "visible"
 })
-    .from("#intro-copy1", {
-        y: 50,
-        opacity: 0,
-        duration: .5,
-        ease: "power2.out",
-        visibility: "visible"
-    })
-    .from("#intro-copy2", {
-        y: 50,
-        opacity: 0,
-        duration: .7,
-        ease: "power2.out",
-        visibility: "visible"
-    });
+.from("#intro-copy2", {
+    y: 50,
+    opacity: 0,
+    duration: .7,
+    ease: "power2.out",
+    visibility: "visible"
+});
 
 
 // Timeline for Flipping Cards Animation
@@ -223,14 +230,18 @@ tlSvg4Intro.from("#svg4", {
         });
     }
 
-    function nextCard() {
-        const maxVisible = getMaxVisible();
-        if (startIdx + maxVisible < cards.length) {
-            startIdx++;
-            updateVisibleCards();
-            updateButtonVisibility();
+        function nextCard() {
+            const maxVisible = getMaxVisible();
+            // Keep moving cards left until 2 spaces past the last card (only for screens 768px and above)
+            let extraSpaces = (window.innerWidth >= 768 && window.innerWidth < 1024) ? 3 : 0;
+            extraSpaces = (window.innerWidth >= 1024 && window.innerWidth < 1550) ? 2 : extraSpaces;
+            const maxStartIdx = Math.max(0, cards.length - maxVisible + extraSpaces);
+            if (startIdx < maxStartIdx) {
+                startIdx++;
+                updateVisibleCards();
+                updateButtonVisibility();
+            }
         }
-    }
 
     function prevCard() {
         if (startIdx > 0) {
@@ -244,6 +255,8 @@ tlSvg4Intro.from("#svg4", {
         const prevButton = document.querySelector('.prev-button');
         const nextButton = document.querySelector('.next-button');
         const maxVisible = getMaxVisible();
+        const extraSpaces = window.innerWidth >= 768 ? 2 : 0;
+        const maxStartIdx = Math.max(0, cards.length - maxVisible + extraSpaces);
 
         if (prevButton) {
             if (startIdx === 0) {
@@ -254,7 +267,7 @@ tlSvg4Intro.from("#svg4", {
         }
 
         if (nextButton) {
-            if (startIdx + maxVisible >= cards.length) {
+            if (startIdx >= maxStartIdx) {
                 nextButton.classList.add('hide');
             } else {
                 nextButton.classList.remove('hide');
@@ -393,6 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const superLabel = document.getElementById('svg-chart-super');
     const superDesc = document.getElementById('svg-chart-super-desc');
     const superArrow = document.getElementById('svg-chart-super-arrow');
+    const mainDesc = document.getElementById('svg-chart-main-desc');
     //var secondBackground = document.getElementById('svg-chart-second-background');
 
     // Set initial scale to 0
@@ -411,6 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .to(normalArrow, { opacity: .3, duration: 0.3, ease: 'back.out(1.7)' }, "+=0.05")
             .to(normalLabel, { opacity: .3, duration: 0.3, ease: 'back.out(1.7)' })
             .to(normalDesc, { opacity: .3, duration: 0.3, ease: 'back.out(1.7)' })
+            .to(mainDesc, { opacity: 1, duration: 0.8, ease: 'back.out(1.7)' })
             .to(superArrow, { scale: 1, duration: 0.8, ease: 'back.out(1.7)' }, "+=0.05")
             .to(superLabel, { opacity: 1, duration: 0.8, ease: 'back.out(1.7)' })
             .to(superDesc, { opacity: 1, duration: 0.8, ease: 'back.out(1.7)' })
@@ -477,10 +492,17 @@ document.addEventListener('DOMContentLoaded', function () {
             //}
         });
     });
-    document.getElementById('closeMovieModal').addEventListener('click', hideMovieModal);
-    document.getElementById('movieModalOverlay').addEventListener('click', function (e) {
-        if (e.target === this) hideMovieModal();
-    });
+    const _closeMovieModal = document.getElementById('closeMovieModal')
+    if (_closeMovieModal) {
+        _closeMovieModal.addEventListener('click', hideMovieModal);
+    }
+    
+    const _movieModalOverlay = document.getElementById('movieModalOverlay');
+    if (_movieModalOverlay) {
+        document.getElementById('movieModalOverlay').addEventListener('click', function (e) {
+            if (e.target === this) hideMovieModal();
+        });        
+    }
 });
 
 
@@ -681,6 +703,56 @@ $(document).ready(function () {
             $menuClose.hide();
         });
     });
+
+    // Auto-activate timeline nav items based on scroll position
+
+    if (typeof IntersectionObserver !== 'undefined') {
+
+        const ctaElements = document.querySelectorAll('.inset-text-cta');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                //console.log('observing', entry.target);
+                //console.log('is intersecting', entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    // Find the parent element with data-event attribute
+                    
+                    const parentWithEvent = entry.target.parentElement;
+                    if (parentWithEvent) {
+                        const eventName = parentWithEvent.id;
+                        
+                        // Remove active class from all timeline nav items
+                        $('.timeline-nav-item').removeClass('active');
+                        //console.log('activating', eventName);
+                        // Add active class to matching timeline nav item
+                        $(`.timeline-nav-item[data-event="${eventName}"]`).addClass('active');
+                        
+                        // Update nav-info display
+                        const $activeNavItem = $(`.timeline-nav-item[data-event="${eventName}"]`);
+                        const currentIndex = $activeNavItem.data('index') || 1;
+                        const totalItems = $('.component-timeline-mobile .timeline-nav-item').length;
+                        $('.nav-info-index').text(currentIndex + '/' + totalItems);
+                        $('.nav-info-title').text($activeNavItem.find('span').text());
+                        
+                        // Update active states for image-containers and info-items
+                        $('.image-container').removeClass('active');
+                        $('.info-item').removeClass('active');
+                        $(`.image-container[data-event="${eventName}"]`).addClass('active');
+                        $(`.info-item[data-event="${eventName}"]`).addClass('active');
+                    }
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '-10% 0px -10% 0px', // Trigger when element is in the middle 20% of viewport
+            threshold: 0.5
+        });
+
+        // Observe all inset-text-cta elements
+        ctaElements.forEach(cta => {
+            observer.observe(cta);
+        });
+    }
 });
 
 // End Timeline Mobile Component
